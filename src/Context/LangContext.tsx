@@ -351,7 +351,7 @@ const translations: Record<Lang, Translations> = {
                     title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Feb 2026 — Present',
-                    desc: 'Real-time multiplayer platform for friends: Bunker, Durak, UNO and Liar’s Dice, right in the browser. Room codes, bots, spectators and reconnect support, plus 3D scenes, collectible items and virtual pets. Built the client, game logic and server.',
+                    desc: 'An online platform for playing games with friends: join a room, chat and spend time together right in your browser. Built the client, game logic and server for real-time multiplayer.',
                     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
                     link: PARTYSIDE.url
                 },
@@ -539,7 +539,7 @@ const translations: Record<Lang, Translations> = {
                     title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Фев 2026 — н.в.',
-                    desc: 'Мультиплеерная платформа для компании: Бункер, Дурак, UNO и Кости лжеца прямо в браузере. Комнаты по коду, боты, зрители и восстановление соединения, а также 3D-сцены, коллекционные предметы и виртуальные питомцы. Разработал клиент, игровую логику и сервер.',
+                    desc: 'Онлайн-платформа с играми для друзей: собирайтесь в одной комнате, общайтесь и проводите время вместе прямо в браузере. Разработал клиентскую часть, игровую логику и сервер для совместной игры в реальном времени.',
                     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
                     link: PARTYSIDE.url
                 },
