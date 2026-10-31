@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { AnimatePresence, MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import { useLang, type Translations } from '@/Context/LangContext';
 import { useTheme } from '@/Context/ThemeContext';
@@ -26,6 +26,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 function Folder({ section }: { section: Section }) {
+    const gradientId = useId();
     const icons: Record<Section, ReactNode> = {
         home: <path d="m3 10 9-7 9 7v10H3zm6 10v-7h6v7" />,
         about: (
@@ -67,6 +68,15 @@ function Folder({ section }: { section: Section }) {
     };
     return (
         <span className={`os-folder os-folder--${section}`} aria-hidden="true">
+            <svg className="os-folder-shape" viewBox="0 0 56 48" fill="none" focusable="false">
+                <defs>
+                    <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
+                        <stop className="os-folder-gradient-start" />
+                        <stop className="os-folder-gradient-end" offset="1" />
+                    </linearGradient>
+                </defs>
+                <path d="M10 2h10a6 6 0 0 1 5.4 3.4L28 10h18a9 9 0 0 1 9 9v19a9 9 0 0 1-9 9H10a9 9 0 0 1-9-9V11a9 9 0 0 1 9-9Z" fill={`url(#${gradientId})`} />
+            </svg>
             <span className="os-folder-mark">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     {icons[section]}

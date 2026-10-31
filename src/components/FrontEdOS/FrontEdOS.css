@@ -99,28 +99,34 @@
     width: 3.5em;
     height: 2.6em;
     flex-shrink: 0;
-    border: 1px solid color-mix(in srgb, var(--folder-color) 70%, transparent);
-    border-radius: 4px 7px 7px 7px;
     color: var(--folder-color);
-    background: linear-gradient(145deg, color-mix(in srgb, var(--folder-color) 24%, var(--os-surface)), color-mix(in srgb, var(--folder-color) 10%, var(--os-surface)));
-    box-shadow: 0 4px 12px #00000014;
+    filter: drop-shadow(0 4px 6px #00000014);
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        filter 0.25s ease;
 }
-.os-folder::before {
-    content: '';
+.os-folder-shape {
     position: absolute;
-    left: -1px;
+    left: 0;
     top: -0.4em;
-    width: 45%;
-    height: 0.45em;
-    border: 1px solid color-mix(in srgb, var(--folder-color) 70%, transparent);
-    border-bottom: 0;
-    border-radius: 5px 5px 0 0;
-    background: color-mix(in srgb, var(--folder-color) 24%, var(--os-surface));
+    width: 100%;
+    height: calc(100% + 0.4em);
+    overflow: visible;
+    pointer-events: none;
+}
+.os-folder-shape > path {
+    stroke: color-mix(in srgb, var(--folder-color) 70%, transparent);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+.os-folder-gradient-start {
+    stop-color: color-mix(in srgb, var(--folder-color) 24%, var(--os-surface));
+}
+.os-folder-gradient-end {
+    stop-color: color-mix(in srgb, var(--folder-color) 10%, var(--os-surface));
 }
 .os-folder-mark {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,10 +139,10 @@
 .os-project-shortcut:hover .os-folder,
 .os-return-folder:hover .os-folder {
     transform: translateY(-3px) rotate(-3deg);
-    box-shadow: 0 7px 18px #00000022;
+    filter: drop-shadow(0 7px 9px #00000022);
 }
 .os-dock-item:hover .os-folder {
-    box-shadow: 0 0 18px color-mix(in srgb, var(--os-accent) 20%, transparent);
+    filter: drop-shadow(0 0 9px color-mix(in srgb, var(--os-accent) 20%, transparent));
 }
 .os-desktop-settings {
     display: flex;
