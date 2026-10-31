@@ -2,6 +2,22 @@
 
 🌐 **Live:** [ra1n-xd.github.io/portfolio](https://ra1n-xd.github.io/portfolio/)
 
+## Deployment
+
+Cloudflare Pages settings for `ed-chervonenko.pages.dev`:
+
+- **Repository:** `Ra1n-xD/portfolio`
+- **Project name:** `ed-chervonenko`
+- **Production branch:** `main`
+- **Framework preset:** React (Vite)
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+
+Cloudflare Pages sets `CF_PAGES=1`, which makes Vite build assets for `/`.
+Other builds keep `/portfolio/` for the existing GitHub Pages deployment.
+Pushes to `main` trigger GitHub Pages; Cloudflare deployments start after the
+repository is connected in the Cloudflare dashboard.
+
 ## 🧑‍💻 About Me
 
 
