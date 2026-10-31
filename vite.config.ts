@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-    base: process.env.CF_PAGES === '1' ? '/' : '/portfolio/',
+    base: process.env.PAGES_BASE_PATH ?? '/',
     plugins: [react()],
     resolve: {
         alias: {

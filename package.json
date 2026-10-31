@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": false,
     "type": "module",
-    "homepage": "https://ra1n-xd.github.io/portfolio/",
+    "homepage": "https://ed-chervonenko.github.io/",
     "dependencies": {
         "framer-motion": "^11.18.2",
         "react": "^18.2.0",

@@ -77,9 +77,9 @@ const ProfileCardContent = ({ t }: { t: Translations }) => (
                 <span className="profile-link-key">{ICONS.twitch} Twitch</span>
                 <span className="profile-link-val">fronted_ra1n</span>
             </a>
-            <a href="https://github.com/Ra1n-xD" target="_blank" rel="noopener noreferrer" className="profile-link">
+            <a href="https://github.com/ed-chervonenko" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.github} GitHub</span>
-                <span className="profile-link-val">ra1n-xd</span>
+                <span className="profile-link-val">ed-chervonenko</span>
             </a>
             <a href="https://www.linkedin.com/in/chervonenko-ed" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.linkedin} LinkedIn</span>

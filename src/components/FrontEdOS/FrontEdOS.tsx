@@ -179,7 +179,7 @@ function HomePage() {
     const quickLinks = [
         { title: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
         { title: ru ? 'Telegram-канал' : 'Telegram Channel', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
-        { title: 'GitHub', value: 'Ra1n-xD', href: 'https://github.com/Ra1n-xD' },
+        { title: 'GitHub', value: 'ed-chervonenko', href: 'https://github.com/ed-chervonenko' },
         { title: 'CV / Resume', value: 'Google Drive', href: RESUME_URL }
     ];
     return (

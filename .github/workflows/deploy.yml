@@ -30,9 +30,12 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - id: pages
+        uses: actions/configure-pages@v4
 
-      - uses: actions/configure-pages@v4
+      - run: npm run build
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
 
       - uses: actions/upload-pages-artifact@v3
         with:

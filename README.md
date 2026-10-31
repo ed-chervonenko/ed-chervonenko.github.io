@@ -1,22 +1,22 @@
 # 👋 Eduard Chervonenko 
 
-🌐 **Live:** [ra1n-xd.github.io/portfolio](https://ra1n-xd.github.io/portfolio/)
+🌐 **Live:** [ed-chervonenko.github.io](https://ed-chervonenko.github.io/)
 
 ## Deployment
 
-Cloudflare Pages settings for `ed-chervonenko.pages.dev`:
+Target address: `https://ed-chervonenko.github.io/`.
 
-- **Repository:** `Ra1n-xD/portfolio`
-- **Project name:** `ed-chervonenko`
+- **Personal account:** `ed-chervonenko`
+- **Repository:** `ed-chervonenko/ed-chervonenko.github.io`, public
 - **Production branch:** `main`
-- **Framework preset:** React (Vite)
-- **Build command:** `npm run build`
-- **Build output directory:** `dist`
+- **Settings → Pages → Source:** GitHub Actions
 
-Cloudflare Pages sets `CF_PAGES=1`, which makes Vite build assets for `/`.
-Other builds keep `/portfolio/` for the existing GitHub Pages deployment.
-Pushes to `main` trigger GitHub Pages; Cloudflare deployments start after the
-repository is connected in the Cloudflare dashboard.
+Pushes to `main` run `.github/workflows/deploy.yml`. The workflow reads the
+site's base path from GitHub Pages and passes it to Vite as `PAGES_BASE_PATH`,
+so both the root address `/` and the current project path `/portfolio/` work.
+
+Local builds default to `/`. To build for a project path instead, run
+`PAGES_BASE_PATH=/portfolio/ npm run build`.
 
 ## 🧑‍💻 About Me
 
@@ -38,5 +38,5 @@ continuous learning and adopting best practices.
 
 - 💬 Telegram: [@ra1n_xd](https://t.me/Ra1n_XD)
 - 📧 Email: ed.chervonenko@gmail.com
-- 🐙 GitHub: [Ra1n-xD](https://github.com/Ra1n-xD)
+- 🐙 GitHub: [ed-chervonenko](https://github.com/ed-chervonenko)
 - 💼 LinkedIn: [chervonenko-ed](https://linkedin.com/in/chervonenko-ed)
