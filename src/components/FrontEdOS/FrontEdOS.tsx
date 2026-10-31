@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { AnimatePresence, MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import { useLang, type Translations } from '@/Context/LangContext';
 import { useTheme } from '@/Context/ThemeContext';
+import { PARTYSIDE } from '@/constants/projects';
 import ParticleCanvas from '@/components/Background/ParticleCanvas';
 import portrait from '@/assets/me.jpg';
 import logo from '@/assets/fronted-logo.png';
@@ -216,14 +217,14 @@ function HomePage() {
             </div>
             <aside className="os-quick-access" aria-label={ru ? 'Быстрый доступ' : 'Quick access'}>
                 <div className="os-eyebrow">{ru ? 'Быстрый доступ' : 'Quick access'}</div>
-                <a className="os-project-shortcut" href="#projects">
-                    <Folder section="projects" />
+                <ExternalLink className="os-project-shortcut" href={PARTYSIDE.url}>
+                    <img className="os-game-icon" src={PARTYSIDE.icon} alt="" width="44" height="44" />
                     <div>
-                        <strong>PartyPlay</strong>
-                        <span>React · NestJS · WebSocket</span>
+                        <strong>{PARTYSIDE.title}</strong>
+                        <span>React · Socket.IO · Three.js</span>
                     </div>
                     <Arrow diagonal />
-                </a>
+                </ExternalLink>
                 <a className="os-project-shortcut" href="#projects">
                     <Folder section="projects" />
                     <div>
@@ -342,41 +343,50 @@ function ProjectsPage() {
         <div className="os-projects-page">
             <PageHeading label={t.projectCards.label} title={t.projectCards.title} />
             <div className="os-projects-grid">
-                {projects.map((project, index) => (
-                    <motion.article
-                        className={`os-project${project.videoId ? ' os-project--video' : ''}`}
-                        key={project.title}
-                        whileHover={reduceMotion ? undefined : { y: -4 }}
-                        transition={{ type: 'spring', stiffness: 350, damping: 26 }}
-                    >
-                        {project.videoId && project.link && (
-                            <ExternalLink href={project.link} className="os-video-preview">
-                                <img src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`} alt={project.title} width="480" height="360" loading="lazy" />
-                                <span className="os-play" aria-hidden="true">
-                                    ▷
-                                </span>
-                            </ExternalLink>
-                        )}
-                        <div className="os-project-content">
-                            <div className="os-project-meta">
-                                <span className="os-eyebrow">
-                                    0{index + 1} / {project.videoId ? 'VIDEO' : 'PROJECT'}
-                                </span>
-                                {project.period && <span>{project.period}</span>}
-                            </div>
-                            <h2>{project.title}</h2>
-                            <span className="os-role">{project.role}</span>
-                            <p>{project.desc}</p>
-                            <Tags items={project.tags} />
-                            {project.link && !project.videoId && (
-                                <ExternalLink href={project.link} className="os-text-link">
-                                    {lang === 'ru' ? 'Открыть проект' : 'Open project'}
-                                    <Arrow diagonal />
-                                </ExternalLink>
+                {projects.map((project, index) => {
+                    const Card = project.link ? motion.a : motion.article;
+                    return (
+                        <Card
+                            className={`os-project${project.videoId ? ' os-project--video' : ''}`}
+                            key={project.title}
+                            href={project.link}
+                            target={project.link ? '_blank' : undefined}
+                            rel={project.link ? 'noopener noreferrer' : undefined}
+                            aria-label={project.link ? `${project.title} — ${lang === 'ru' ? 'открыть в новой вкладке' : 'open in a new tab'}` : undefined}
+                            whileHover={reduceMotion ? undefined : { y: -4 }}
+                            transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                        >
+                            {project.videoId && project.link && (
+                                <div className="os-video-preview">
+                                    <img src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`} alt={project.title} width="480" height="360" loading="lazy" />
+                                    <span className="os-play" aria-hidden="true">
+                                        ▷
+                                    </span>
+                                </div>
                             )}
-                        </div>
-                    </motion.article>
-                ))}
+                            <div className="os-project-content">
+                                <div className="os-project-meta">
+                                    <span className="os-eyebrow">
+                                        0{index + 1} / {project.videoId ? 'VIDEO' : 'PROJECT'}
+                                    </span>
+                                    {project.period && <span>{project.period}</span>}
+                                </div>
+                                <div className="os-project-heading">
+                                    {project.icon && (
+                                        <span className="os-project-icon" aria-hidden="true">
+                                            {project.icon}
+                                        </span>
+                                    )}
+                                    <h2>{project.title}</h2>
+                                    {project.link && <Arrow diagonal />}
+                                </div>
+                                <span className="os-role">{project.role}</span>
+                                <p>{project.desc}</p>
+                                <Tags items={project.tags} />
+                            </div>
+                        </Card>
+                    );
+                })}
             </div>
         </div>
     );
@@ -516,6 +526,13 @@ function Desktop() {
                                     <span>{sectionLabel(section)}</span>
                                 </a>
                             ))}
+                            <ExternalLink className="os-dock-item os-dock-item--game" href={PARTYSIDE.url}>
+                                <img className="os-game-icon" src={PARTYSIDE.icon} alt="" width="44" height="44" />
+                                <span>
+                                    {PARTYSIDE.title}
+                                    <Arrow diagonal />
+                                </span>
+                            </ExternalLink>
                         </nav>
                         <div className="os-desktop-settings">
                             <span className="os-desktop-brand">

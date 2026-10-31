@@ -80,6 +80,31 @@
     background: var(--os-soft-accent);
     border-color: var(--os-line);
 }
+.os-dock-item--game {
+    border-color: var(--os-line);
+    background: var(--os-surface-raised);
+}
+.os-dock-item--game > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.os-dock-item--game > span > svg {
+    width: 12px;
+    height: 12px;
+    color: var(--os-accent);
+}
+.os-game-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+.os-dock-item--game:hover .os-game-icon,
+.os-project-shortcut:hover .os-game-icon {
+    transform: translateY(-3px) rotate(-3deg);
+}
 .os-folder {
     --folder-color: var(--os-folder-blue);
     position: relative;
@@ -634,10 +659,21 @@
     gap: 18px;
 }
 .os-project {
+    display: block;
     overflow: hidden;
     border: 1px solid var(--os-line);
     border-radius: 12px;
     background: var(--os-surface-raised);
+}
+.os-project[href] {
+    transition:
+        border-color 0.2s,
+        background 0.2s;
+}
+.os-project[href]:hover,
+.os-project[href]:focus-visible {
+    border-color: var(--os-accent);
+    background: var(--os-soft-accent);
 }
 .os-project-content {
     padding: 18px 20px;
@@ -657,6 +693,33 @@
 .os-project h2 {
     margin-top: 12px;
     font-size: 1.55em;
+}
+.os-project-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+.os-project .os-project-heading h2 {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+.os-project-heading > svg {
+    color: var(--os-accent);
+}
+.os-project-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    color: var(--os-accent);
+}
+.os-project-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .os-role {
     display: block;
@@ -922,6 +985,10 @@
     .os-dock-item .os-folder {
         font-size: 11px;
     }
+    .os-dock-item .os-game-icon {
+        width: 30px;
+        height: 30px;
+    }
     .os-desktop-settings {
         padding-top: 12px;
         gap: 8px;
@@ -1113,6 +1180,10 @@
     }
     .os-dock-item .os-folder {
         font-size: 11px;
+    }
+    .os-dock-item .os-game-icon {
+        width: 32px;
+        height: 32px;
     }
     .os-desktop-settings {
         flex-direction: row;

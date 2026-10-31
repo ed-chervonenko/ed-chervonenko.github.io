@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/constants/storage';
+import { PARTYSIDE } from '@/constants/projects';
 
 type Lang = 'en' | 'ru';
 
@@ -346,13 +347,13 @@ const translations: Record<Lang, Translations> = {
             title: 'Projects',
             items: [
                 {
-                    icon: ICONS.dice,
-                    title: 'PartyPlay',
+                    icon: <img src={PARTYSIDE.icon} alt="" width="40" height="40" />,
+                    title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Feb 2026 — Present',
-                    desc: 'Web platform for board games — play with friends online in real time. Built as a fullstack pet project.',
-                    tags: ['React', 'TypeScript', 'NestJS', 'WebSocket'],
-                    link: 'http://partyplay.duckdns.org/'
+                    desc: 'Real-time multiplayer platform for friends: Bunker, Durak, UNO and Liar’s Dice, right in the browser. Room codes, bots, spectators and reconnect support, plus 3D scenes, collectible items and virtual pets. Built the client, game logic and server.',
+                    tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
+                    link: PARTYSIDE.url
                 },
                 {
                     icon: ICONS.messageCircle,
@@ -535,13 +536,13 @@ const translations: Record<Lang, Translations> = {
             title: 'Проекты',
             items: [
                 {
-                    icon: ICONS.dice,
-                    title: 'PartyPlay',
+                    icon: <img src={PARTYSIDE.icon} alt="" width="40" height="40" />,
+                    title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Фев 2026 — н.в.',
-                    desc: 'Веб-платформа для настольных игр — играйте с друзьями онлайн в реальном времени.',
-                    tags: ['React', 'TypeScript', 'NestJS', 'WebSocket'],
-                    link: 'http://partyplay.duckdns.org/'
+                    desc: 'Мультиплеерная платформа для компании: Бункер, Дурак, UNO и Кости лжеца прямо в браузере. Комнаты по коду, боты, зрители и восстановление соединения, а также 3D-сцены, коллекционные предметы и виртуальные питомцы. Разработал клиент, игровую логику и сервер.',
+                    tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
+                    link: PARTYSIDE.url
                 },
                 {
                     icon: ICONS.messageCircle,
