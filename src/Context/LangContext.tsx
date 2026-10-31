@@ -416,7 +416,6 @@ const translations: Record<Lang, Translations> = {
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
                 { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
                 { icon: ICONS.megaphone, label: 'Telegram Channel', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
-                { icon: ICONS.briefcase, label: 'LinkedIn', value: 'linkedin.com/in/chervonenko-ed', href: 'https://www.linkedin.com/in/chervonenko-ed' },
                 { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
             ]
         },
@@ -605,7 +604,6 @@ const translations: Record<Lang, Translations> = {
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
                 { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
                 { icon: ICONS.megaphone, label: 'Telegram-канал', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
-                { icon: ICONS.briefcase, label: 'LinkedIn', value: 'linkedin.com/in/chervonenko-ed', href: 'https://www.linkedin.com/in/chervonenko-ed' },
                 { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
             ]
         },
