@@ -616,7 +616,7 @@ const translations: Record<Lang, Translations> = {
 export function LangProvider({ children }: { children: ReactNode }) {
     const [lang, setLang] = useState<Lang>(() => {
         const saved = localStorage.getItem(STORAGE_KEYS.LANG);
-        return saved === 'ru' || saved === 'en' ? saved : 'en';
+        return saved === 'en' ? 'en' : 'ru';
     });
 
     const toggleLang = useCallback(() => {
