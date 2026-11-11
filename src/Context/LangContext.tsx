@@ -425,7 +425,7 @@ const translations: Record<Lang, Translations> = {
         contact: {
             label: 'Contact',
             title: "Let's work together",
-            desc: "Open to new opportunities, freelance projects, and interesting collaborations. Don't hesitate to reach out — I usually respond within 24 hours.",
+            desc: 'Open to new opportunities, freelance projects, and interesting collaborations.',
             items: [
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
                 { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
@@ -624,7 +624,7 @@ const translations: Record<Lang, Translations> = {
         contact: {
             label: 'Контакты',
             title: 'Давайте работать вместе',
-            desc: 'Открыт к новым возможностям, фрилансу и интересным коллаборациям. Пишите — обычно отвечаю в течение 24 часов.',
+            desc: 'Открыт к новым возможностям, фрилансу и интересным коллаборациям.',
             items: [
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
                 { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
