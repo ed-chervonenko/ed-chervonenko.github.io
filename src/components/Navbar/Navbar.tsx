@@ -52,7 +52,7 @@ function Navbar() {
     const navLinks = [
         { label: t.nav.about, id: 'about' },
         { label: t.nav.experience, id: 'experience' },
-        { label: t.nav.projects, id: 'projects' },
+        { label: t.projectCards.title, id: 'projects' },
         { label: t.nav.mentoring, id: 'mentoring' }
     ];
 

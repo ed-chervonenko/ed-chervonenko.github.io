@@ -1,6 +1,9 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/constants/storage';
 import { PARTYSIDE } from '@/constants/projects';
+import centerInstrumentLogo from '@/assets/center-instrument-logo.svg';
+import manipulaLogo from '@/assets/manipula-logo.png';
+import txixLogo from '@/assets/txix-logo.png';
 
 type Lang = 'en' | 'ru';
 
@@ -18,29 +21,20 @@ interface SkillGroup {
 export interface WorkItem {
     role: string;
     company: string;
+    logo?: string;
     period: string;
     current: boolean;
     bullets: string[];
 }
 
 export interface ProjectItem {
-    icon: ReactNode;
+    icon?: ReactNode;
     title: string;
     role: string;
     period: string;
     desc: string;
     tags: string[];
     link?: string;
-    videoId?: string;
-}
-
-export interface MentoringProject {
-    badge: string | null;
-    title: string;
-    role: string;
-    period: string;
-    desc: string;
-    tags: string[];
 }
 
 interface PriceItem {
@@ -101,11 +95,6 @@ const ICONS = {
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
     ),
-    messageCircle: (
-        <svg {...svgProps}>
-            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
-        </svg>
-    ),
     dice: (
         <svg {...svgProps}>
             <rect x="2" y="2" width="20" height="20" rx="3" />
@@ -155,7 +144,7 @@ export interface Translations {
         about: string;
         skills: string;
         experience: string;
-        projects: string;
+        talks: string;
         mentoring: string;
         contact: string;
     };
@@ -192,11 +181,10 @@ export interface Translations {
         work: WorkItem[];
     };
     projectCards: {
-        label: string;
         title: string;
         items: ProjectItem[];
-        mentoring: MentoringProject;
     };
+    talks: { title: string; href: string }[];
     mentoring: {
         label: string;
         title: string;
@@ -227,6 +215,8 @@ interface LangContextValue {
 }
 
 const LangContext = createContext<LangContextValue | undefined>(undefined);
+const IT_HOZYAEVA_TALK = 'https://youtu.be/XQ9E-r7i0oE';
+const JS_MENTORING_STREAM = 'https://www.youtube.com/live/W2y0QlShyd0';
 
 const translations: Record<Lang, Translations> = {
     en: {
@@ -234,7 +224,7 @@ const translations: Record<Lang, Translations> = {
             about: 'About',
             skills: 'Tech Stack',
             experience: 'Career',
-            projects: 'Portfolio',
+            talks: 'Talks',
             mentoring: 'Mentoring',
             contact: 'Contact me'
         },
@@ -307,26 +297,27 @@ const translations: Record<Lang, Translations> = {
                 {
                     role: 'Fullstack Developer / Team Lead',
                     company: 'Center-Instrument · Part-time',
+                    logo: centerInstrumentLogo,
                     period: 'Feb 2026 — Present',
                     current: true,
                     bullets: [
-                        'Develop a B2B e-commerce platform for industrial tools end-to-end using Next.js, React, TypeScript, Node.js, Express, Prisma and PostgreSQL.',
-                        'Built the catalog with search and filters, product pages, cart, favorites and customer accounts. Developed checkout for individuals and businesses with discounts, payments, delivery, order statuses and email notifications.',
-                        'Developed an admin panel for catalog, promotions, users, roles and orders. Automated XLSX imports with preview, column mapping, validation, SKU-based updates and row-level error handling; built a data export bot to reduce manual work.',
-                        'Implemented JWT authentication with access/refresh tokens, httpOnly cookies, role-based access and OTP login, email verification and password recovery. Worked on Alfa-Bank, Yandex Delivery and DaData integrations.',
-                        'Lead technical decisions, task breakdown and assignment, code reviews and implementation quality. Manage content editors, prioritize catalog updates and oversee product data quality.'
+                        'Designed the architecture of a B2B marketplace for industrial tools. Develop the frontend with Next.js and TypeScript and the backend with Node.js, Prisma and PostgreSQL.',
+                        'Improved page load performance and reduced LCP. Improved the marketplace’s search rankings through technical SEO.',
+                        'Built the catalog, cart and checkout for consumers and businesses. Worked on Alfa-Bank, Yandex Delivery and DaData integrations.',
+                        'Built an admin panel and automated XLSX product imports with validation and SKU-based updates.',
+                        'Lead the engineering and catalog content teams, assign work and review code.'
                     ]
                 },
                 {
                     role: 'Frontend Developer',
-                    company: 'Txix',
+                    company: 'TXIX',
+                    logo: txixLogo,
                     period: 'Feb 2024 — Present',
                     current: true,
                     bullets: [
-                        'Refactored legacy projects (migrated from class components and Redux), introduced ESLint and Prettier, improving codebase maintainability, standardizing code style across the team, and boosting performance of updated project versions.',
-                        'Developed the frontend for a multi-channel communication service (Email, SMS, Push, social networks, messengers), providing the client with a unified interface for managing campaigns across all channels.',
-                        'Built the frontend for a meeting and electronic voting management service, replacing paper-based workflows and accelerating the decision-making process for the client.',
-                        'Contributed to the development of an internal UI Kit, unifying the visual style and reducing new interface development time through reusable components.'
+                        'Built the frontend for two services, one for managing campaigns across email, SMS, push and messengers and one for managing meetings and electronic voting.',
+                        'Modernized legacy frontends by migrating away from class components and reworking state management.',
+                        'Contributed reusable components to the internal UI kit.'
                     ]
                 },
                 {
@@ -335,15 +326,13 @@ const translations: Record<Lang, Translations> = {
                     period: 'Jan 2021 — Jul 2021',
                     current: false,
                     bullets: [
-                        'Built fullstack websites and admin panels from scratch for local businesses (pharmacies, stores, etc.), addressing the region’s digitalization needs in the absence of major retail chains.',
-                        'Integrated third-party services via API on demand, extending products’ functionality.',
-                        'Mentored new developers and introduced Git and Scrum to the company, reducing onboarding time and eliminating code loss.'
+                        'Built fullstack sites and admin panels for pharmacies and retailers from scratch, including third-party API integrations.',
+                        'Introduced Git to the team and mentored new developers.'
                     ]
                 }
             ]
         },
         projectCards: {
-            label: 'Portfolio',
             title: 'Projects',
             items: [
                 {
@@ -356,7 +345,7 @@ const translations: Record<Lang, Translations> = {
                     link: PARTYSIDE.url
                 },
                 {
-                    icon: ICONS.messageCircle,
+                    icon: <img src={manipulaLogo} alt="" width="40" height="40" />,
                     title: 'ManipulA',
                     role: 'TeamLead',
                     period: 'Dec 2025 — Present',
@@ -364,25 +353,18 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
-                    icon: ICONS.megaphone,
-                    title: 'Talk · IT-ХОЗЯЕВА',
-                    role: 'Speaker',
-                    period: '',
-                    desc: 'Gave a talk representing the IT-ХОЗЯЕВА developer community. Watch the recording on YouTube.',
-                    tags: ['Community', 'Public Speaking', 'YouTube'],
-                    link: 'https://youtu.be/XQ9E-r7i0oE?si=7Aycqj15CY7lRj7D',
-                    videoId: 'XQ9E-r7i0oE'
+                    title: 'JS Mentoring from Scratch',
+                    role: 'Mentor',
+                    period: 'Jun 2024 — Present',
+                    desc: '6Seniors — mentoring entry-level developers from zero to junior/middle, building a real fullstack project step by step with best practices and live coding.',
+                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Mentoring']
                 }
-            ],
-            mentoring: {
-                badge: null,
-                title: 'JS Mentoring from Scratch',
-                role: 'Mentor',
-                period: 'Jun 2024 — Present',
-                desc: '6Seniors — mentoring entry-level developers from zero to junior/middle, building a real fullstack project step by step with best practices and live coding.',
-                tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Mentoring']
-            }
+            ]
         },
+        talks: [
+            { title: 'Stop wasting tokens! How to stay within AI agent limits · IT-ХОЗЯЕВА', href: IT_HOZYAEVA_TALK },
+            { title: 'JS mentoring — Map, Set, Big O and React', href: JS_MENTORING_STREAM }
+        ],
         mentoring: {
             label: 'Mentoring',
             title: 'My Services',
@@ -428,7 +410,7 @@ const translations: Record<Lang, Translations> = {
             about: 'Обо мне',
             skills: 'Стек',
             experience: 'Карьера',
-            projects: 'Портфолио',
+            talks: 'Выступления',
             mentoring: 'Менторинг',
             contact: 'Связаться'
         },
@@ -495,26 +477,27 @@ const translations: Record<Lang, Translations> = {
                 {
                     role: 'Fullstack-разработчик / Team Lead',
                     company: 'Центр-Инструмент · Частичная занятость',
+                    logo: centerInstrumentLogo,
                     period: 'Фев 2026 — настоящее время',
                     current: true,
                     bullets: [
-                        'Разрабатываю и развиваю B2B e-commerce платформу промышленного инструмента: frontend на Next.js, React и TypeScript, backend на Node.js, Express, Prisma и PostgreSQL.',
-                        'Реализовал каталог с поиском и фильтрацией, карточки товаров, корзину, избранное и личный кабинет. Развивал оформление заказов для физических и юридических лиц со скидками, оплатой, доставкой, статусами и email-уведомлениями.',
-                        'Разработал админ-панель для управления каталогом, промо-материалами, пользователями, ролями и заказами. Автоматизировал XLSX-импорт с предпросмотром, сопоставлением колонок, валидацией, обновлением по SKU и построчной обработкой ошибок; создал бота для выгрузки данных и сокращения ручной работы.',
-                        'Реализовал JWT-аутентификацию с access/refresh-токенами, httpOnly cookie, ролевым доступом, OTP-входом, подтверждением email и восстановлением пароля. Работал над интеграциями с Альфа-Банком, Яндекс Доставкой и DaData.',
-                        'Выполняю функции тимлида: выбираю технические решения, декомпозирую и распределяю задачи, провожу code review и контролирую качество. Руковожу контент-менеджерами, приоритизирую наполнение каталога и слежу за качеством товарных данных.'
+                        'Спроектировал архитектуру B2B-маркетплейса промышленного инструмента. Развиваю фронтенд на Next.js и TypeScript и бэкенд на Node.js, Prisma и PostgreSQL.',
+                        'Ускорил загрузку страниц и снизил LCP. Улучшил позиции маркетплейса в поисковой выдаче за счёт технического SEO.',
+                        'Разработал каталог, корзину и оформление заказов для физлиц и компаний. Работал над интеграциями с Альфа-Банком, Яндекс Доставкой и DaData.',
+                        'Создал админ-панель и автоматизировал импорт товаров из XLSX с валидацией и обновлением по SKU.',
+                        'Руковожу разработкой и контент-командой, распределяю задачи и провожу code review.'
                     ]
                 },
                 {
                     role: 'Frontend-разработчик',
-                    company: 'Txix',
+                    company: 'TXIX',
+                    logo: txixLogo,
                     period: 'Фев 2024 — настоящее время',
                     current: true,
                     bullets: [
-                        'Провёл рефакторинг легаси-проектов (миграция с классовых компонентов и Redux), внедрил ESLint и Prettier, что улучшило поддерживаемость кодовой базы, стандартизировало стиль кода в команде и повысило производительность обновлённых версий проектов.',
-                        'Разработал frontend сервиса многоканальных коммуникаций (Email, SMS, Push, соцсети, мессенджеры), обеспечив заказчику единый интерфейс управления рассылками по всем каналам.',
-                        'Разработал frontend сервиса управления заседаниями и электронным голосованием, заменив бумажный документооборот и ускорив процесс принятия решений для нужд заказчика.',
-                        'Участвовал в разработке внутреннего UI-Kit, унифицировав визуальный стиль и сократив время разработки новых интерфейсов за счёт переиспользуемых компонентов.'
+                        'Разработал интерфейсы для рассылок по email, SMS, push и мессенджерам, а также для проведения заседаний с электронным голосованием.',
+                        'Обновил легаси-фронтенд, перевёл классовые компоненты на функциональные и переработал управление состоянием.',
+                        'Разрабатывал переиспользуемые компоненты для внутреннего UI-кита.'
                     ]
                 },
                 {
@@ -523,15 +506,13 @@ const translations: Record<Lang, Translations> = {
                     period: 'Янв 2021 — Июл 2021',
                     current: false,
                     bullets: [
-                        'Разработал с нуля fullstack-сайты и админ-панели для локального бизнеса (аптеки, магазины и т.д), закрывая потребность региона в цифровизации при отсутствии крупных сетей.',
-                        'По требованию интегрировал сторонние сервисы через API, расширив функциональность продуктов.',
-                        'Менторил новых разработчиков и внедрил в компанию Git и Scrum, сократив время онбординга и устранив потерю кода.'
+                        'С нуля разрабатывал сайты и админ-панели для аптек и магазинов, интегрировал сторонние сервисы через API.',
+                        'Внедрил Git в команде и менторил новых разработчиков.'
                     ]
                 }
             ]
         },
         projectCards: {
-            label: 'Портфолио',
             title: 'Проекты',
             items: [
                 {
@@ -544,7 +525,7 @@ const translations: Record<Lang, Translations> = {
                     link: PARTYSIDE.url
                 },
                 {
-                    icon: ICONS.messageCircle,
+                    icon: <img src={manipulaLogo} alt="" width="40" height="40" />,
                     title: 'ManipulA',
                     role: 'TeamLead',
                     period: 'Дек 2025 — н.в.',
@@ -552,25 +533,18 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
-                    icon: ICONS.megaphone,
-                    title: 'Доклад · IT-ХОЗЯЕВА',
-                    role: 'Спикер',
-                    period: '',
-                    desc: 'Выступил с докладом от сообщества IT-ХОЗЯЕВА. Запись выступления доступна на YouTube.',
-                    tags: ['Сообщество', 'Выступление', 'YouTube'],
-                    link: 'https://youtu.be/XQ9E-r7i0oE?si=7Aycqj15CY7lRj7D',
-                    videoId: 'XQ9E-r7i0oE'
+                    title: 'JS менторинг с нуля',
+                    role: 'Mentor',
+                    period: 'Июн 2024 — н.в.',
+                    desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
+                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг']
                 }
-            ],
-            mentoring: {
-                badge: null,
-                title: 'JS менторинг с нуля',
-                role: 'Mentor',
-                period: 'Июн 2024 — н.в.',
-                desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
-                tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг']
-            }
+            ]
         },
+        talks: [
+            { title: 'Хватит сливать токены! Базовая гигиена для экономии лимитов ИИ агентов · IT-ХОЗЯЕВА', href: IT_HOZYAEVA_TALK },
+            { title: 'JS-менторинг — Map, Set, Big O и React', href: JS_MENTORING_STREAM }
+        ],
         mentoring: {
             label: 'Менторинг',
             title: 'Мои услуги',

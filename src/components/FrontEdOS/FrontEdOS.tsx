@@ -7,13 +7,13 @@ import ParticleCanvas from '@/components/Background/ParticleCanvas';
 import portrait from '@/assets/me.jpg';
 import './FrontEdOS.css';
 
-const SECTIONS = ['home', 'about', 'skills', 'experience', 'projects', 'mentoring', 'contact'] as const;
+const SECTIONS = ['home', 'about', 'skills', 'experience', 'talks', 'mentoring', 'contact'] as const;
 type Section = (typeof SECTIONS)[number];
 const RESUME_URL = 'https://drive.google.com/drive/folders/1KZ_eu9n9IdUYwfX7PUSVSgQC4hz5nBMp';
-const MENTORING_VIDEO = 'https://www.youtube.com/live/W2y0QlShyd0?si=vIflkj8zBXXuKTfH';
-const SECTION_FILES: Record<Section, string> = { home: 'about.me', about: 'about', skills: 'tech-stack', experience: 'career', projects: 'portfolio', mentoring: 'mentoring', contact: 'contact' };
+const SECTION_FILES: Record<Section, string> = { home: 'about.me', about: 'about', skills: 'tech-stack', experience: 'career', talks: 'talks', mentoring: 'mentoring', contact: 'contact' };
 const readSection = (): Section => {
     const value = window.location.hash.slice(1);
+    if (value === 'projects') return 'experience';
     return SECTIONS.includes(value as Section) ? (value as Section) : 'home';
 };
 
@@ -46,12 +46,10 @@ function Folder({ section }: { section: Section }) {
                 <path d="M8 7V4h8v3M3 12l9 3 9-3m-9 1v4" />
             </>
         ),
-        projects: (
+        talks: (
             <>
-                <rect x="3" y="3" width="7" height="7" rx="1" />
-                <rect x="14" y="3" width="7" height="7" rx="1" />
-                <rect x="3" y="14" width="7" height="7" rx="1" />
-                <rect x="14" y="14" width="7" height="7" rx="1" />
+                <rect x="9" y="2" width="6" height="12" rx="3" />
+                <path d="M5 10v1a7 7 0 0 0 14 0v-1m-7 8v4m-4 0h8" />
             </>
         ),
         mentoring: (
@@ -160,10 +158,10 @@ function Stats({ t }: { t: Translations }) {
     );
 }
 
-function PageHeading({ label, title }: { label: string; title: string }) {
+function PageHeading({ label, title }: { label?: string; title: string }) {
     return (
         <div className="os-page-heading">
-            <span className="os-eyebrow">{label}</span>
+            {label && <span className="os-eyebrow">{label}</span>}
             <h1 id="os-page-title">{title}</h1>
         </div>
     );
@@ -199,9 +197,9 @@ function HomePage() {
                 <p className="os-home-description">{t.hero.desc}</p>
                 <Tags items={['React', 'TypeScript', 'Next.js', 'NestJS']} />
                 <div className="os-actions">
-                    <a href="#projects" className="os-shortcut">
-                        <Folder section="projects" />
-                        {t.projectCards.title}
+                    <a href="#talks" className="os-shortcut">
+                        <Folder section="talks" />
+                        {t.nav.talks}
                         <Arrow />
                     </a>
                     <a href="#experience" className="os-shortcut">
@@ -221,14 +219,6 @@ function HomePage() {
                     </div>
                     <Arrow diagonal />
                 </ExternalLink>
-                <a className="os-project-shortcut" href="#projects">
-                    <Folder section="projects" />
-                    <div>
-                        <strong>ManipulA</strong>
-                        <span>TeamLead · Telegram Bot</span>
-                    </div>
-                    <Arrow diagonal />
-                </a>
                 <div className="os-quick-links">
                     {quickLinks.map((link) => (
                         <ExternalLink href={link.href} key={link.title}>
@@ -298,9 +288,21 @@ function SkillsPage() {
 
 function CareerPage() {
     const { t } = useLang();
+    const projectsRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        if (window.location.hash === '#projects') projectsRef.current?.scrollIntoView();
+    }, []);
+
     return (
         <>
-            <PageHeading label={t.experience.label} title={t.experience.workTitle} />
+            <div className="os-career-heading">
+                <PageHeading label={t.experience.label} title={t.experience.workTitle} />
+                <a href="#projects" className="os-text-link">
+                    {t.projectCards.title}
+                    <Arrow />
+                </a>
+            </div>
             <div className="os-career">
                 {t.experience.work.map((work, index) => (
                     <article className="os-work" key={work.company}>
@@ -308,7 +310,10 @@ function CareerPage() {
                             <span className="os-eyebrow">
                                 0{index + 1} / {work.period}
                             </span>
-                            <h2>{work.company}</h2>
+                            <h2>
+                                {work.logo && <img className="os-company-logo" src={work.logo} alt="" width="40" height="40" />}
+                                {work.company}
+                            </h2>
                             {work.current && (
                                 <span className="os-status">
                                     <span />
@@ -327,64 +332,71 @@ function CareerPage() {
                     </article>
                 ))}
             </div>
+            <section className="os-career-projects" id="projects" ref={projectsRef} aria-labelledby="os-projects-title">
+                <h2 id="os-projects-title">{t.projectCards.title}</h2>
+                <CareerProjects />
+            </section>
         </>
     );
 }
 
-function ProjectsPage() {
+function CareerProjects() {
     const { t, lang } = useLang();
     const reduceMotion = useReducedMotion();
-    const projects = [...t.projectCards.items, { ...t.projectCards.mentoring, link: MENTORING_VIDEO, videoId: 'W2y0QlShyd0', icon: null }];
     return (
-        <div className="os-projects-page">
-            <PageHeading label={t.projectCards.label} title={t.projectCards.title} />
-            <div className="os-projects-grid">
-                {projects.map((project, index) => {
-                    const Card = project.link ? motion.a : motion.article;
-                    return (
-                        <Card
-                            className={`os-project${project.videoId ? ' os-project--video' : ''}`}
-                            key={project.title}
-                            href={project.link}
-                            target={project.link ? '_blank' : undefined}
-                            rel={project.link ? 'noopener noreferrer' : undefined}
-                            aria-label={project.link ? `${project.title} — ${lang === 'ru' ? 'открыть в новой вкладке' : 'open in a new tab'}` : undefined}
-                            whileHover={reduceMotion ? undefined : { y: -4 }}
-                            transition={{ type: 'spring', stiffness: 350, damping: 26 }}
-                        >
-                            {project.videoId && project.link && (
-                                <div className="os-video-preview">
-                                    <img src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`} alt={project.title} width="480" height="360" loading="lazy" />
-                                    <span className="os-play" aria-hidden="true">
-                                        ▷
-                                    </span>
-                                </div>
+        <div className="os-projects-grid">
+            {t.projectCards.items.map((project) => {
+                const Card = project.link ? motion.a : motion.article;
+                return (
+                    <Card
+                        className="os-project"
+                        key={project.title}
+                        href={project.link}
+                        target={project.link ? '_blank' : undefined}
+                        rel={project.link ? 'noopener noreferrer' : undefined}
+                        aria-label={project.link ? `${project.title} — ${lang === 'ru' ? 'открыть в новой вкладке' : 'open in a new tab'}` : undefined}
+                        whileHover={project.link && !reduceMotion ? { y: -4 } : undefined}
+                        transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                    >
+                        <span className="os-project-meta">{project.period}</span>
+                        <div className="os-project-heading">
+                            {project.icon && (
+                                <span className="os-project-icon" aria-hidden="true">
+                                    {project.icon}
+                                </span>
                             )}
-                            <div className="os-project-content">
-                                <div className="os-project-meta">
-                                    <span className="os-eyebrow">
-                                        0{index + 1} / {project.videoId ? 'VIDEO' : 'PROJECT'}
-                                    </span>
-                                    {project.period && <span>{project.period}</span>}
-                                </div>
-                                <div className="os-project-heading">
-                                    {project.icon && (
-                                        <span className="os-project-icon" aria-hidden="true">
-                                            {project.icon}
-                                        </span>
-                                    )}
-                                    <h2>{project.title}</h2>
-                                    {project.link && <Arrow diagonal />}
-                                </div>
-                                <span className="os-role">{project.role}</span>
-                                <p>{project.desc}</p>
-                                <Tags items={project.tags} />
-                            </div>
-                        </Card>
-                    );
-                })}
-            </div>
+                            <h3>{project.title}</h3>
+                            {project.link && <Arrow diagonal />}
+                        </div>
+                        <span className="os-role">{project.role}</span>
+                        <p>{project.desc}</p>
+                        <Tags items={project.tags} />
+                    </Card>
+                );
+            })}
         </div>
+    );
+}
+
+function TalksPage() {
+    const { t } = useLang();
+    return (
+        <>
+            <PageHeading title={t.nav.talks} />
+            <ul className="os-talks">
+                {t.talks.map((talk) => (
+                    <li key={talk.href}>
+                        <ExternalLink href={talk.href} className="os-contact-link">
+                            <div>
+                                <span>YouTube</span>
+                                <strong>{talk.title}</strong>
+                            </div>
+                            <Arrow diagonal />
+                        </ExternalLink>
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 }
 
@@ -461,7 +473,7 @@ const PAGES: Record<Section, () => ReactNode> = {
     about: AboutPage,
     skills: SkillsPage,
     experience: CareerPage,
-    projects: ProjectsPage,
+    talks: TalksPage,
     mentoring: MentoringPage,
     contact: ContactPage
 };
@@ -483,7 +495,7 @@ function Desktop() {
             if (window.location.hash === '#os-document') return;
             navigated.current = true;
             setActive(readSection());
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            if (window.location.hash !== '#projects') window.scrollTo({ top: 0, behavior: 'instant' });
         };
         window.addEventListener('hashchange', onHashChange);
         return () => window.removeEventListener('hashchange', onHashChange);
