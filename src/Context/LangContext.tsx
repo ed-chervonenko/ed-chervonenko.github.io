@@ -315,7 +315,7 @@ const translations: Record<Lang, Translations> = {
                     current: true,
                     bullets: [
                         'Lead the engineering and catalog content teams, assign work and review code.',
-                        'Designed the architecture of a B2B marketplace for industrial tools. Develop the frontend with Next.js and TypeScript and the backend with Node.js, Prisma and PostgreSQL.',
+                        'Designed the architecture of an online industrial tool store for individual and business customers. Develop the frontend with Next.js and TypeScript and the backend with Node.js, Prisma and PostgreSQL.',
                         'Improved page load performance and reduced LCP. Improved the marketplace’s search rankings through technical SEO.',
                         'Built the catalog, cart and checkout for consumers and businesses. Worked on Alfa-Bank, Yandex Delivery and DaData integrations.',
                         'Built an admin panel and automated XLSX product imports with validation and SKU-based updates.'
@@ -331,8 +331,7 @@ const translations: Record<Lang, Translations> = {
                         'Built interfaces for managing campaigns across email, SMS, push notifications and messaging apps.',
                         'Built the frontend for a service that digitized organizational workflows.',
                         'Modernized legacy frontends by migrating away from class components and reworking state management.',
-                        'Contributed reusable components to the internal UI kit.',
-                        'Introduced ESLint and Prettier to standardize code style across the team.'
+                        'Contributed reusable components to the internal UI kit.'
                     ]
                 },
                 {
@@ -341,8 +340,8 @@ const translations: Record<Lang, Translations> = {
                     period: 'Jan 2021 — Jul 2021',
                     current: false,
                     bullets: [
-                        'Built fullstack sites and admin panels for pharmacies and retailers from scratch.',
-                        'Integrated third-party services through APIs to meet client needs.',
+                        'Built fullstack sites and admin panels from scratch for medium-sized and large businesses in the region (pharmacies, retail stores, and others).',
+                        'Integrated third-party services via APIs to meet client needs (Yandex Maps and email notification services).',
                         'Introduced Git and Scrum to the team.',
                         'Mentored new developers and helped them get up to speed on projects.'
                     ]
@@ -515,7 +514,7 @@ const translations: Record<Lang, Translations> = {
                     current: true,
                     bullets: [
                         'Руковожу разработкой и контент-командой, распределяю задачи и провожу code review.',
-                        'Спроектировал архитектуру B2B-маркетплейса промышленного инструмента. Развиваю фронтенд на Next.js и TypeScript и бэкенд на Node.js, Prisma и PostgreSQL.',
+                        'Спроектировал архитектуру интернет-магазина промышленного инструмента для частных и корпоративных клиентов. Развиваю фронтенд на Next.js и TypeScript и бэкенд на Node.js, Prisma и PostgreSQL.',
                         'Ускорил загрузку страниц и снизил LCP. Улучшил позиции маркетплейса в поисковой выдаче за счёт технического SEO.',
                         'Разработал каталог, корзину и оформление заказов для физлиц и компаний. Работал над интеграциями с Альфа-Банком, Яндекс Доставкой и DaData.',
                         'Создал админ-панель и автоматизировал импорт товаров из XLSX с валидацией и обновлением по SKU.'
@@ -531,8 +530,7 @@ const translations: Record<Lang, Translations> = {
                         'Разработал интерфейсы для управления рассылками по email, SMS, push и мессенджерам.',
                         'Разработал фронтенд сервиса для перевода рабочих процессов организаций в цифровой формат.',
                         'Обновил легаси-фронтенд, перевёл классовые компоненты на функциональные и переработал управление состоянием.',
-                        'Разрабатывал переиспользуемые компоненты для внутреннего UI-кита.',
-                        'Внедрил ESLint и Prettier, чтобы унифицировать стиль кода в команде.'
+                        'Разрабатывал переиспользуемые компоненты для внутреннего UI-кита.'
                     ]
                 },
                 {
@@ -541,8 +539,8 @@ const translations: Record<Lang, Translations> = {
                     period: 'Янв 2021 — Июл 2021',
                     current: false,
                     bullets: [
-                        'С нуля разрабатывал сайты и админ-панели для аптек и магазинов.',
-                        'Интегрировал сторонние сервисы через API под задачи клиентов.',
+                        'С нуля разрабатывал сайты и админ-панели для среднего и крупного бизнеса области (аптеки, магазины и др.).',
+                        'Интегрировал сторонние сервисы через API под задачи клиентов (Яндекс Карты, сервисы email-уведомлений).',
                         'Внедрил Git и Scrum в команде.',
                         'Менторил новых разработчиков и помогал им включаться в работу над проектами.'
                     ]

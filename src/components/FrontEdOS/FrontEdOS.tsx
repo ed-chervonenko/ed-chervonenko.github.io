@@ -197,14 +197,14 @@ function HomePage() {
                 <p className="os-home-description">{t.hero.desc}</p>
                 <Tags items={['React', 'TypeScript', 'Next.js', 'NestJS']} />
                 <div className="os-actions">
+                    <a href="#experience" className="os-shortcut">
+                        <Folder section="experience" />
+                        {t.nav.experience}
+                        <Arrow />
+                    </a>
                     <a href="#talks" className="os-shortcut">
                         <Folder section="talks" />
                         {t.nav.talks}
-                        <Arrow />
-                    </a>
-                    <a href="#experience" className="os-shortcut">
-                        <Folder section="experience" />
-                        {t.hero.viewExperience}
                         <Arrow />
                     </a>
                 </div>
