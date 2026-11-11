@@ -251,7 +251,7 @@ function AboutPage() {
                     <p>{t.about.p1}</p>
                     <p>{t.about.p2}</p>
                     <p>{t.about.p3}</p>
-                    <p>{t.about.community}</p>
+                    <p>{t.about.speakingAndMentoring}</p>
                 </div>
                 <figure className="os-photo">
                     <img src={portrait} alt={t.hero.name} width="420" height="420" />
@@ -379,24 +379,51 @@ function CareerProjects() {
 }
 
 function TalksPage() {
-    const { t } = useLang();
+    const { t, lang } = useLang();
+    const reduceMotion = useReducedMotion();
     return (
-        <>
+        <div className="os-talks-page">
             <PageHeading title={t.nav.talks} />
-            <ul className="os-talks">
-                {t.talks.map((talk) => (
-                    <li key={talk.href}>
-                        <ExternalLink href={talk.href} className="os-contact-link">
-                            <div>
-                                <span>YouTube</span>
-                                <strong>{talk.title}</strong>
+            <div className="os-talks">
+                {t.talks.map((talk, index) => (
+                    <motion.a
+                        className="os-project"
+                        key={talk.href}
+                        href={talk.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${talk.title} — ${lang === 'ru' ? 'открыть в новой вкладке' : 'open in a new tab'}`}
+                        whileHover={reduceMotion ? undefined : { y: -4 }}
+                        transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                    >
+                        <div className="os-video-preview">
+                            <img src={`https://img.youtube.com/vi/${talk.videoId}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" />
+                            <span className="os-play" aria-hidden="true">
+                                ▷
+                            </span>
+                        </div>
+                        <div className="os-project-content">
+                            <div className="os-project-meta">
+                                <span className="os-eyebrow">0{index + 1} / VIDEO</span>
+                                {talk.period && <span>{talk.period}</span>}
                             </div>
-                            <Arrow diagonal />
-                        </ExternalLink>
-                    </li>
+                            <div className="os-project-heading">
+                                {talk.icon && (
+                                    <span className="os-project-icon" aria-hidden="true">
+                                        {talk.icon}
+                                    </span>
+                                )}
+                                <h2>{talk.title}</h2>
+                                <Arrow diagonal />
+                            </div>
+                            <span className="os-role">{talk.role}</span>
+                            <p>{talk.desc}</p>
+                            <Tags items={talk.tags} />
+                        </div>
+                    </motion.a>
                 ))}
-            </ul>
-        </>
+            </div>
+        </div>
     );
 }
 

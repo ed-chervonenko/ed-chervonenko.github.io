@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/constants/storage';
 import { PARTYSIDE } from '@/constants/projects';
+import sixSeniorsLogo from '@/assets/6seniors-logo.jpg';
 import centerInstrumentLogo from '@/assets/center-instrument-logo.svg';
 import manipulaLogo from '@/assets/manipula-logo.png';
 import txixLogo from '@/assets/txix-logo.png';
@@ -35,6 +36,17 @@ export interface ProjectItem {
     desc: string;
     tags: string[];
     link?: string;
+}
+
+interface TalkItem {
+    title: string;
+    href: string;
+    videoId: string;
+    icon?: ReactNode;
+    role: string;
+    period?: string;
+    desc: string;
+    tags: string[];
 }
 
 interface PriceItem {
@@ -166,7 +178,7 @@ export interface Translations {
         p1: ReactNode;
         p2: ReactNode;
         p3: ReactNode;
-        community: ReactNode;
+        speakingAndMentoring: ReactNode;
         stats: Stat[];
     };
     skills: {
@@ -184,7 +196,7 @@ export interface Translations {
         title: string;
         items: ProjectItem[];
     };
-    talks: { title: string; href: string }[];
+    talks: TalkItem[];
     mentoring: {
         label: string;
         title: string;
@@ -215,8 +227,8 @@ interface LangContextValue {
 }
 
 const LangContext = createContext<LangContextValue | undefined>(undefined);
-const IT_HOZYAEVA_TALK = 'https://youtu.be/XQ9E-r7i0oE';
-const JS_MENTORING_STREAM = 'https://www.youtube.com/live/W2y0QlShyd0';
+const IT_HOZYAEVA_TALK = { href: 'https://youtu.be/XQ9E-r7i0oE', videoId: 'XQ9E-r7i0oE' };
+const JS_MENTORING_STREAM = { href: 'https://www.youtube.com/live/W2y0QlShyd0', videoId: 'W2y0QlShyd0' };
 const SIX_SENIORS_CHANNEL = 'https://www.youtube.com/@6seniors';
 
 const translations: Record<Lang, Translations> = {
@@ -262,9 +274,9 @@ const translations: Record<Lang, Translations> = {
                     and establishing good engineering practices in teams.
                 </>
             ),
-            community: (
+            speakingAndMentoring: (
                 <>
-                    I'm a member of the <strong>IT-ХОЗЯЕВА</strong> developer community and have given a talk on its behalf. I also run a{' '}
+                    I've given technical talks and mentored developers online. I also run a{' '}
                     <a href="https://t.me/s/fronted_engineer" target="_blank" rel="noopener noreferrer">
                         Telegram channel
                     </a>
@@ -354,6 +366,7 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
+                    icon: <img src={sixSeniorsLogo} alt="" width="40" height="40" />,
                     title: '6Seniors · JS Mentoring from Scratch',
                     role: 'Mentor',
                     period: 'Jun 2024 — Present',
@@ -364,8 +377,22 @@ const translations: Record<Lang, Translations> = {
             ]
         },
         talks: [
-            { title: 'Stop wasting tokens! How to stay within AI agent limits · IT-ХОЗЯЕВА', href: IT_HOZYAEVA_TALK },
-            { title: 'JS mentoring — Map, Set, Big O and React', href: JS_MENTORING_STREAM }
+            {
+                ...IT_HOZYAEVA_TALK,
+                icon: ICONS.megaphone,
+                title: 'Talk · IT-ХОЗЯЕВА',
+                role: 'Speaker',
+                desc: 'Gave a talk representing the IT-ХОЗЯЕВА developer community. Watch the recording on YouTube.',
+                tags: ['Community', 'Public Speaking', 'YouTube']
+            },
+            {
+                ...JS_MENTORING_STREAM,
+                title: 'JS Mentoring from Scratch',
+                role: 'Mentor',
+                period: 'Jun 2024 — Present',
+                desc: '6Seniors — mentoring entry-level developers from zero to junior/middle, building a real fullstack project step by step with best practices and live coding.',
+                tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Mentoring']
+            }
         ],
         mentoring: {
             label: 'Mentoring',
@@ -443,9 +470,9 @@ const translations: Record<Lang, Translations> = {
                     практики в командах.
                 </>
             ),
-            community: (
+            speakingAndMentoring: (
                 <>
-                    Участвую в сообществе <strong>IT-ХОЗЯЕВА</strong> и выступал от его имени с докладом. Также веду свой{' '}
+                    Выступал с техническими докладами и менторил разработчиков онлайн. Также веду свой{' '}
                     <a href="https://t.me/s/fronted_engineer" target="_blank" rel="noopener noreferrer">
                         Telegram-канал
                     </a>
@@ -535,6 +562,7 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
+                    icon: <img src={sixSeniorsLogo} alt="" width="40" height="40" />,
                     title: '6Seniors · JS-менторинг с нуля',
                     role: 'Mentor',
                     period: 'Июн 2024 — н.в.',
@@ -545,8 +573,22 @@ const translations: Record<Lang, Translations> = {
             ]
         },
         talks: [
-            { title: 'Хватит сливать токены! Базовая гигиена для экономии лимитов ИИ агентов · IT-ХОЗЯЕВА', href: IT_HOZYAEVA_TALK },
-            { title: 'JS-менторинг — Map, Set, Big O и React', href: JS_MENTORING_STREAM }
+            {
+                ...IT_HOZYAEVA_TALK,
+                icon: ICONS.megaphone,
+                title: 'Доклад · IT-ХОЗЯЕВА',
+                role: 'Спикер',
+                desc: 'Выступил с докладом от сообщества IT-ХОЗЯЕВА. Запись выступления доступна на YouTube.',
+                tags: ['Сообщество', 'Выступление', 'YouTube']
+            },
+            {
+                ...JS_MENTORING_STREAM,
+                title: 'JS менторинг с нуля',
+                role: 'Mentor',
+                period: 'Июн 2024 — н.в.',
+                desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
+                tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг']
+            }
         ],
         mentoring: {
             label: 'Менторинг',

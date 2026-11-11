@@ -546,6 +546,11 @@
 .os-prose p + p {
     margin-top: 20px;
 }
+.os-prose a:any-link {
+    color: var(--os-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
 .os-photo {
     overflow: hidden;
     border: 1px solid var(--os-line);
@@ -739,19 +744,86 @@
     text-decoration: underline;
     text-underline-offset: 5px;
 }
+.os-talks-page {
+    container-type: inline-size;
+    font-size: clamp(14px, 1vw, 16px);
+}
 .os-talks {
     display: grid;
-    gap: 12px;
-    max-width: 780px;
-    margin: 0;
+    gap: 18px;
+}
+.os-talks .os-project {
+    display: grid;
+    grid-template-columns: clamp(420px, 35%, 440px) minmax(0, 1fr);
     padding: 0;
-    list-style: none;
 }
-.os-talks .os-contact-link {
-    min-height: 74px;
+.os-talks .os-project-content {
+    padding: 18px 20px;
 }
-.os-talks .os-contact-link strong {
-    font-size: 1em;
+.os-talks .os-project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.65em;
+}
+.os-talks .os-project-meta .os-eyebrow {
+    font-size: inherit;
+    white-space: nowrap;
+}
+.os-talks .os-project-heading {
+    min-height: 0;
+}
+.os-talks .os-project-heading h2 {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.55em;
+}
+.os-talks .os-project-icon {
+    width: 44px;
+    height: 44px;
+}
+.os-video-preview {
+    position: relative;
+    display: grid;
+    place-items: center;
+    align-self: start;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0a0e1a;
+}
+.os-video-preview img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    /* Crop the letterboxing from YouTube's 4:3 thumbnail. */
+    height: 133.333333%;
+    object-fit: cover;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+.os-video-preview:hover img {
+    opacity: 1;
+}
+.os-play {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #ffffff66;
+    border-radius: 50%;
+    background: #070a1299;
+    color: white;
+    font-size: 29px;
+    backdrop-filter: blur(5px);
+}
+@container (max-width: 900px) {
+    .os-talks .os-project {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 .os-mentoring-layout {
     display: grid;
@@ -1345,6 +1417,15 @@
     }
     .os-project {
         padding: 20px;
+    }
+    .os-talks {
+        gap: 16px;
+    }
+    .os-talks .os-project-meta {
+        font-size: 9px;
+    }
+    .os-talks .os-project-heading h2 {
+        font-size: 23px;
     }
     .os-project p {
         font-size: 14px;
