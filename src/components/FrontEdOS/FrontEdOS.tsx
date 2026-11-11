@@ -233,7 +233,7 @@ function HomePage() {
                 </div>
                 <a href="#contact" className="os-all-links os-shortcut">
                     <Folder section="contact" />
-                    {ru ? 'Все контакты' : 'All contact links'}
+                    {t.nav.contact}
                     <Arrow />
                 </a>
             </aside>

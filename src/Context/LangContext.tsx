@@ -239,7 +239,7 @@ const translations: Record<Lang, Translations> = {
             experience: 'Career',
             talks: 'Talks',
             mentoring: 'Mentoring',
-            contact: 'Contact me'
+            contact: 'Contact'
         },
         hero: {
             badge: 'Available for work',
@@ -444,7 +444,7 @@ const translations: Record<Lang, Translations> = {
             experience: 'Карьера',
             talks: 'Выступления',
             mentoring: 'Менторинг',
-            contact: 'Связаться'
+            contact: 'Контакты'
         },
         hero: {
             badge: 'Открыт к работе',
