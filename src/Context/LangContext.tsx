@@ -314,11 +314,11 @@ const translations: Record<Lang, Translations> = {
                     period: 'Feb 2026 — Present',
                     current: true,
                     bullets: [
+                        'Lead the engineering and catalog content teams, assign work and review code.',
                         'Designed the architecture of a B2B marketplace for industrial tools. Develop the frontend with Next.js and TypeScript and the backend with Node.js, Prisma and PostgreSQL.',
                         'Improved page load performance and reduced LCP. Improved the marketplace’s search rankings through technical SEO.',
                         'Built the catalog, cart and checkout for consumers and businesses. Worked on Alfa-Bank, Yandex Delivery and DaData integrations.',
-                        'Built an admin panel and automated XLSX product imports with validation and SKU-based updates.',
-                        'Lead the engineering and catalog content teams, assign work and review code.'
+                        'Built an admin panel and automated XLSX product imports with validation and SKU-based updates.'
                     ]
                 },
                 {
@@ -328,9 +328,11 @@ const translations: Record<Lang, Translations> = {
                     period: 'Feb 2024 — Present',
                     current: true,
                     bullets: [
-                        'Built the frontend for two services, one for managing campaigns across email, SMS, push and messengers and one for managing meetings and electronic voting.',
+                        'Built interfaces for managing campaigns across email, SMS, push notifications and messaging apps.',
+                        'Built the frontend for a service that digitized organizational workflows.',
                         'Modernized legacy frontends by migrating away from class components and reworking state management.',
-                        'Contributed reusable components to the internal UI kit.'
+                        'Contributed reusable components to the internal UI kit.',
+                        'Introduced ESLint and Prettier to standardize code style across the team.'
                     ]
                 },
                 {
@@ -339,8 +341,10 @@ const translations: Record<Lang, Translations> = {
                     period: 'Jan 2021 — Jul 2021',
                     current: false,
                     bullets: [
-                        'Built fullstack sites and admin panels for pharmacies and retailers from scratch, including third-party API integrations.',
-                        'Introduced Git to the team and mentored new developers.'
+                        'Built fullstack sites and admin panels for pharmacies and retailers from scratch.',
+                        'Integrated third-party services through APIs to meet client needs.',
+                        'Introduced Git and Scrum to the team.',
+                        'Mentored new developers and helped them get up to speed on projects.'
                     ]
                 }
             ]
@@ -510,11 +514,11 @@ const translations: Record<Lang, Translations> = {
                     period: 'Фев 2026 — настоящее время',
                     current: true,
                     bullets: [
+                        'Руковожу разработкой и контент-командой, распределяю задачи и провожу code review.',
                         'Спроектировал архитектуру B2B-маркетплейса промышленного инструмента. Развиваю фронтенд на Next.js и TypeScript и бэкенд на Node.js, Prisma и PostgreSQL.',
                         'Ускорил загрузку страниц и снизил LCP. Улучшил позиции маркетплейса в поисковой выдаче за счёт технического SEO.',
                         'Разработал каталог, корзину и оформление заказов для физлиц и компаний. Работал над интеграциями с Альфа-Банком, Яндекс Доставкой и DaData.',
-                        'Создал админ-панель и автоматизировал импорт товаров из XLSX с валидацией и обновлением по SKU.',
-                        'Руковожу разработкой и контент-командой, распределяю задачи и провожу code review.'
+                        'Создал админ-панель и автоматизировал импорт товаров из XLSX с валидацией и обновлением по SKU.'
                     ]
                 },
                 {
@@ -524,9 +528,11 @@ const translations: Record<Lang, Translations> = {
                     period: 'Фев 2024 — настоящее время',
                     current: true,
                     bullets: [
-                        'Разработал интерфейсы для рассылок по email, SMS, push и мессенджерам, а также для проведения заседаний с электронным голосованием.',
+                        'Разработал интерфейсы для управления рассылками по email, SMS, push и мессенджерам.',
+                        'Разработал фронтенд сервиса для перевода рабочих процессов организаций в цифровой формат.',
                         'Обновил легаси-фронтенд, перевёл классовые компоненты на функциональные и переработал управление состоянием.',
-                        'Разрабатывал переиспользуемые компоненты для внутреннего UI-кита.'
+                        'Разрабатывал переиспользуемые компоненты для внутреннего UI-кита.',
+                        'Внедрил ESLint и Prettier, чтобы унифицировать стиль кода в команде.'
                     ]
                 },
                 {
@@ -535,8 +541,10 @@ const translations: Record<Lang, Translations> = {
                     period: 'Янв 2021 — Июл 2021',
                     current: false,
                     bullets: [
-                        'С нуля разрабатывал сайты и админ-панели для аптек и магазинов, интегрировал сторонние сервисы через API.',
-                        'Внедрил Git в команде и менторил новых разработчиков.'
+                        'С нуля разрабатывал сайты и админ-панели для аптек и магазинов.',
+                        'Интегрировал сторонние сервисы через API под задачи клиентов.',
+                        'Внедрил Git и Scrum в команде.',
+                        'Менторил новых разработчиков и помогал им включаться в работу над проектами.'
                     ]
                 }
             ]
