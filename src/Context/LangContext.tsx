@@ -217,6 +217,7 @@ interface LangContextValue {
 const LangContext = createContext<LangContextValue | undefined>(undefined);
 const IT_HOZYAEVA_TALK = 'https://youtu.be/XQ9E-r7i0oE';
 const JS_MENTORING_STREAM = 'https://www.youtube.com/live/W2y0QlShyd0';
+const SIX_SENIORS_CHANNEL = 'https://www.youtube.com/@6seniors';
 
 const translations: Record<Lang, Translations> = {
     en: {
@@ -353,11 +354,12 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
-                    title: 'JS Mentoring from Scratch',
+                    title: '6Seniors · JS Mentoring from Scratch',
                     role: 'Mentor',
                     period: 'Jun 2024 — Present',
                     desc: '6Seniors — mentoring entry-level developers from zero to junior/middle, building a real fullstack project step by step with best practices and live coding.',
-                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Mentoring']
+                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Mentoring'],
+                    link: SIX_SENIORS_CHANNEL
                 }
             ]
         },
@@ -533,11 +535,12 @@ const translations: Record<Lang, Translations> = {
                     tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'Telegram Bot API']
                 },
                 {
-                    title: 'JS менторинг с нуля',
+                    title: '6Seniors · JS-менторинг с нуля',
                     role: 'Mentor',
                     period: 'Июн 2024 — н.в.',
                     desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
-                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг']
+                    tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг'],
+                    link: SIX_SENIORS_CHANNEL
                 }
             ]
         },
