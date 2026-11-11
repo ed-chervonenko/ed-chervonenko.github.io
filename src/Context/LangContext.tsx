@@ -341,7 +341,7 @@ const translations: Record<Lang, Translations> = {
                     current: false,
                     bullets: [
                         'Built fullstack sites and admin panels from scratch for medium-sized and large businesses in the region (pharmacies, retail stores, and others).',
-                        'Integrated third-party services via APIs to meet client needs (Yandex Maps and email notification services).',
+                        'Integrated third-party services via APIs to meet client needs (Yandex Maps, email notification services, and others).',
                         'Introduced Git and Scrum to the team.',
                         'Mentored new developers and helped them get up to speed on projects.'
                     ]
@@ -540,7 +540,7 @@ const translations: Record<Lang, Translations> = {
                     current: false,
                     bullets: [
                         'С нуля разрабатывал сайты и админ-панели для среднего и крупного бизнеса области (аптеки, магазины и др.).',
-                        'Интегрировал сторонние сервисы через API под задачи клиентов (Яндекс Карты, сервисы email-уведомлений).',
+                        'Интегрировал сторонние сервисы через API под задачи клиентов (Яндекс Карты, сервисы email-уведомлений и др.).',
                         'Внедрил Git и Scrum в команде.',
                         'Менторил новых разработчиков и помогал им включаться в работу над проектами.'
                     ]
