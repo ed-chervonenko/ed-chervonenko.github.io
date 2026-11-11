@@ -274,7 +274,7 @@ const translations: Record<Lang, Translations> = {
                 { number: '4+', label: 'Years of experience' },
                 { number: '10+', label: 'Projects shipped' },
                 { number: '2', label: 'Teams led' },
-                { number: '5+', label: 'Devs mentored' }
+                { number: '15+', label: 'People mentored' }
             ]
         },
         skills: {
@@ -453,8 +453,8 @@ const translations: Record<Lang, Translations> = {
             stats: [
                 { number: '4+', label: 'Лет опыта' },
                 { number: '10+', label: 'Проектов' },
-                { number: '2', label: 'Команды' },
-                { number: '5+', label: 'Менторил' }
+                { number: '2', label: 'Команды, которыми руководил' },
+                { number: '15+', label: 'Людей, которых менторил' }
             ]
         },
         skills: {
