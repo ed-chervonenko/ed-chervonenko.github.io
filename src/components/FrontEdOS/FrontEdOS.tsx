@@ -437,7 +437,6 @@ function MentoringPage() {
                 <div>
                     <div className="os-prose os-mentor-intro">
                         <p>{m.about}</p>
-                        <p>{m.aboutExtra}</p>
                     </div>
                     <h2>{m.helpTitle}</h2>
                     <ul className="os-list">

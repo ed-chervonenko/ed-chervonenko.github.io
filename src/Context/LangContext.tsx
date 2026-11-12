@@ -201,7 +201,6 @@ export interface Translations {
         label: string;
         title: string;
         about: string;
-        aboutExtra: string;
         helpTitle: string;
         helpItems: string[];
         disclaimer: string;
@@ -400,20 +399,16 @@ const translations: Record<Lang, Translations> = {
         mentoring: {
             label: 'Mentoring',
             title: 'Fullstack Web Development',
-            about: "I help beginners learn frontend and backend development by building and deploying their own web app. I've worked professionally in web development since 2021 and hold an honors bachelor's degree in Computer Science and Information Technology.",
-            aboutExtra: "I've been mentoring since summer 2024 in an educational project and individually. Several people have already been hired since then.",
+            about: "I help beginners learn frontend and backend development through practice. I've worked in web development since 2021 and mentored developers since 2024. Several of my mentees have found jobs.",
             helpTitle: 'What I help with',
             helpItems: [
-                'Web development fundamentals and choosing a stack for your project',
-                'Frontend development with JavaScript, TypeScript, React and Next.js',
-                'Backend development with Node.js and NestJS, including APIs and authentication',
-                'Database design and SQL with PostgreSQL',
-                'Designing and deploying a fullstack application',
-                'Code review, real-world development tasks and a learning plan',
-                'Interview preparation and resume feedback',
-                'Introductions to recruiters who reach out to me, when possible'
+                'Frontend fundamentals with JavaScript, TypeScript, React and Next.js',
+                'Backend development with Node.js and NestJS, plus APIs, authentication and PostgreSQL',
+                'Stack selection, architecture and deployment through practice examples',
+                'Learning plans, practical exercises and code reviews',
+                'Interview preparation, resume feedback and recruiter introductions when possible'
             ],
-            disclaimer: "I do mentoring — helping you learn. I can't promise 100% employment like sketchy courses, especially now when the market is oversaturated with juniors.",
+            disclaimer: 'Mentoring does not guarantee a job offer.',
             priceTitle: 'Pricing',
             prices: [
                 { name: 'Quick basic questions', value: 'Free' },
@@ -600,20 +595,16 @@ const translations: Record<Lang, Translations> = {
         mentoring: {
             label: 'Менторинг',
             title: 'Fullstack-разработка',
-            about: 'Помогаю начинающим освоить фронтенд и бэкенд на практике и довести свой проект до запуска. Профессионально занимаюсь веб-разработкой с 2021 года. Окончил бакалавриат с отличием по направлению «Фундаментальная информатика и информационные технологии».',
-            aboutExtra: 'Менторингом занимаюсь с лета 2024 года в одном образовательном проекте и индивидуально. С этого момента уже несколько человек трудоустроились.',
+            about: 'Помогаю начинающим освоить фронтенд и бэкенд на практике. В веб-разработке с 2021 года, менторю с 2024-го. Несколько моих учеников уже трудоустроились.',
             helpTitle: 'С чем помогаю',
             helpItems: [
-                'Основы веб-разработки и выбор стека под проект',
-                'Фронтенд на JavaScript и TypeScript, интерфейсы на React и Next.js',
-                'Бэкенд на Node.js и NestJS, проектирование API и авторизация',
-                'Проектирование базы данных и работа с SQL на примере PostgreSQL',
-                'Архитектура и деплой fullstack-приложения',
-                'Ревью кода, разбор рабочих задач и план обучения',
-                'Подготовка к собеседованиям и помощь с резюме',
-                'Знакомство с рекрутерами, которые обращаются ко мне, когда есть возможность'
+                'Основы фронтенда на JavaScript и TypeScript, интерфейсы на React и Next.js',
+                'Бэкенд на Node.js и NestJS, API, авторизация и базы данных на PostgreSQL',
+                'Выбор стека, архитектура и деплой на учебных примерах',
+                'План обучения, разбор задач и ревью кода',
+                'Подготовка к собеседованиям, помощь с резюме и знакомство с рекрутерами по возможности'
             ],
-            disclaimer: 'Я занимаюсь именно менторингом, то есть помощью с обучением. Обещать 100% трудоустройство как на «говно-курсах» я не могу, особенно сейчас, когда рынок перенасыщен джунами.',
+            disclaimer: 'Менторинг не гарантирует трудоустройство.',
             priceTitle: 'Стоимость',
             prices: [
                 { name: 'Быстрые и базовые вопросы', value: 'Бесплатно' },
