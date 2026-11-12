@@ -398,7 +398,7 @@ const translations: Record<Lang, Translations> = {
         ],
         mentoring: {
             label: 'Mentoring',
-            title: 'Fullstack Web Development',
+            title: 'My Services',
             about: "I help beginners learn frontend and backend development. I've worked in web development since 2021 and mentored developers since 2024. Several of my mentees have found jobs.",
             helpTitle: 'What I help with',
             helpItems: [
@@ -594,7 +594,7 @@ const translations: Record<Lang, Translations> = {
         ],
         mentoring: {
             label: 'Менторинг',
-            title: 'Fullstack-разработка',
+            title: 'Мои услуги',
             about: 'Помогаю начинающим освоить фронтенд и бэкенд. В веб-разработке с 2021 года, менторю с 2024-го. Несколько моих учеников уже трудоустроились.',
             helpTitle: 'С чем помогаю',
             helpItems: [
