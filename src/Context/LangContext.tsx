@@ -408,7 +408,7 @@ const translations: Record<Lang, Translations> = {
                 'Learning plans, practical exercises and code reviews',
                 'Interview preparation, resume feedback and recruiter introductions when possible'
             ],
-            disclaimer: "I help you learn and prepare for interviews. Hiring also depends on the job market, so I can't guarantee a job offer.",
+            disclaimer: "I do mentoring — helping you learn. I can't promise 100% employment like sketchy courses, especially now when the market is oversaturated with juniors.",
             priceTitle: 'Pricing',
             prices: [
                 { name: 'Quick basic questions', value: 'Free' },
@@ -604,7 +604,7 @@ const translations: Record<Lang, Translations> = {
                 'План обучения, разбор задач и ревью кода',
                 'Подготовка к собеседованиям, помощь с резюме и знакомство с рекрутерами по возможности'
             ],
-            disclaimer: 'Помогаю учиться и готовиться к собеседованиям. Трудоустройство зависит и от ситуации на рынке, поэтому гарантий нет.',
+            disclaimer: 'Я занимаюсь именно менторингом, то есть помощью с обучением. Обещать 100% трудоустройство как на «говно-курсах» я не могу, особенно сейчас, когда рынок перенасыщен джунами.',
             priceTitle: 'Стоимость',
             prices: [
                 { name: 'Быстрые и базовые вопросы', value: 'Бесплатно' },
