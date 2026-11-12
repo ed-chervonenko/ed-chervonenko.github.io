@@ -399,7 +399,7 @@ const translations: Record<Lang, Translations> = {
         mentoring: {
             label: 'Mentoring',
             title: 'Fullstack Web Development',
-            about: "I help beginners learn frontend and backend development through practice. I've worked in web development since 2021 and mentored developers since 2024. Several of my mentees have found jobs.",
+            about: "I help beginners learn frontend and backend development. I've worked in web development since 2021 and mentored developers since 2024. Several of my mentees have found jobs.",
             helpTitle: 'What I help with',
             helpItems: [
                 'Frontend fundamentals with JavaScript, TypeScript, React and Next.js',
@@ -408,7 +408,7 @@ const translations: Record<Lang, Translations> = {
                 'Learning plans, practical exercises and code reviews',
                 'Interview preparation, resume feedback and recruiter introductions when possible'
             ],
-            disclaimer: 'Mentoring does not guarantee a job offer.',
+            disclaimer: "I help you learn and prepare for interviews. Hiring also depends on the job market, so I can't guarantee a job offer.",
             priceTitle: 'Pricing',
             prices: [
                 { name: 'Quick basic questions', value: 'Free' },
@@ -595,7 +595,7 @@ const translations: Record<Lang, Translations> = {
         mentoring: {
             label: 'Менторинг',
             title: 'Fullstack-разработка',
-            about: 'Помогаю начинающим освоить фронтенд и бэкенд на практике. В веб-разработке с 2021 года, менторю с 2024-го. Несколько моих учеников уже трудоустроились.',
+            about: 'Помогаю начинающим освоить фронтенд и бэкенд. В веб-разработке с 2021 года, менторю с 2024-го. Несколько моих учеников уже трудоустроились.',
             helpTitle: 'С чем помогаю',
             helpItems: [
                 'Основы фронтенда на JavaScript и TypeScript, интерфейсы на React и Next.js',
@@ -604,7 +604,7 @@ const translations: Record<Lang, Translations> = {
                 'План обучения, разбор задач и ревью кода',
                 'Подготовка к собеседованиям, помощь с резюме и знакомство с рекрутерами по возможности'
             ],
-            disclaimer: 'Менторинг не гарантирует трудоустройство.',
+            disclaimer: 'Помогаю учиться и готовиться к собеседованиям. Трудоустройство зависит и от ситуации на рынке, поэтому гарантий нет.',
             priceTitle: 'Стоимость',
             prices: [
                 { name: 'Быстрые и базовые вопросы', value: 'Бесплатно' },
