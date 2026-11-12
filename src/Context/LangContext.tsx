@@ -269,7 +269,7 @@ const translations: Record<Lang, Translations> = {
             ),
             p3: (
                 <>
-                    I graduated with <strong>honors</strong> in Computer Science and Information Technology from Belgorod State University in 2024. Beyond coding, I enjoy mentoring junior developers
+                    I graduated with <strong>honors</strong> in Computer Science and Information Technology in 2024. Beyond coding, I enjoy mentoring junior developers
                     and establishing good engineering practices in teams.
                 </>
             ),
@@ -465,7 +465,7 @@ const translations: Record<Lang, Translations> = {
             p2: <>Начал программировать в 16 лет и не останавливался. С тех пор работал на всех уровнях — от pixel-perfect UI до архитектуры бэкенда и настройки CI/CD.</>,
             p3: (
                 <>
-                    Окончил с <strong>отличием</strong> направление «Информатика и вычислительная техника» в БелГУ в 2024 году. Помимо кода, мне нравится менторить джунов и выстраивать инженерные
+                    Окончил с <strong>отличием</strong> направление «Информатика и вычислительная техника» в 2024 году. Помимо кода, мне нравится менторить джунов и выстраивать инженерные
                     практики в командах.
                 </>
             ),
