@@ -42,7 +42,6 @@ interface TalkItem {
     title: string;
     href: string;
     videoId: string;
-    icon?: ReactNode;
     role: string;
     period?: string;
     desc: string;
@@ -167,6 +166,7 @@ export interface Translations {
         lastName: string;
         subtitle: string;
         cardRole: string;
+        mentorRole: string;
         desc: string;
         cta: string;
         viewExperience: string;
@@ -247,6 +247,7 @@ const translations: Record<Lang, Translations> = {
             lastName: 'Chervonenko',
             subtitle: '<Fullstack Developer | TeamLead | Mentor />',
             cardRole: 'Fullstack Developer · TeamLead · Mentor',
+            mentorRole: 'Mentor',
             desc: '4+ years building web applications with React, TypeScript, Next.js and NestJS. Passionate about clean code, great UX, and continuous learning.',
             cta: 'Contact me',
             viewExperience: 'Experience',
@@ -381,15 +382,14 @@ const translations: Record<Lang, Translations> = {
         talks: [
             {
                 ...IT_HOZYAEVA_TALK,
-                icon: ICONS.megaphone,
-                title: 'Talk · IT-ХОЗЯЕВА',
+                title: 'Stop Wasting Tokens! How to Stay Within AI Agent Limits · IT-ХОЗЯЕВА',
                 role: 'Speaker',
                 desc: 'Gave a talk representing the IT-ХОЗЯЕВА developer community. Watch the recording on YouTube.',
                 tags: ['Community', 'Public Speaking', 'YouTube']
             },
             {
                 ...JS_MENTORING_STREAM,
-                title: 'JS Mentoring from Scratch',
+                title: 'JS Mentoring — Map, Set, Big O and React · 6Seniors',
                 role: 'Mentor',
                 period: 'Jun 2024 — Present',
                 desc: '6Seniors — mentoring entry-level developers from zero to junior/middle, building a real fullstack project step by step with best practices and live coding.',
@@ -447,8 +447,9 @@ const translations: Record<Lang, Translations> = {
             name: 'Эдуард Червоненко',
             firstName: 'Эдуард',
             lastName: 'Червоненко',
-            subtitle: '<Fullstack Developer | TeamLead | Mentor />',
-            cardRole: 'Fullstack Developer · TeamLead · Mentor',
+            subtitle: '<Fullstack Developer | TeamLead | Ментор />',
+            cardRole: 'Fullstack Developer · TeamLead · Ментор',
+            mentorRole: 'Ментор',
             desc: '4+ лет разработки веб-приложений на React, TypeScript, Next.js и NestJS.',
             cta: 'Связаться',
             viewExperience: 'Опыт работы',
@@ -566,7 +567,7 @@ const translations: Record<Lang, Translations> = {
                 {
                     icon: <img src={sixSeniorsLogo} alt="" width="40" height="40" />,
                     title: '6Seniors · JS-менторинг с нуля',
-                    role: 'Mentor',
+                    role: 'Ментор',
                     period: 'Июн 2024 — н.в.',
                     desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
                     tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг'],
@@ -577,16 +578,15 @@ const translations: Record<Lang, Translations> = {
         talks: [
             {
                 ...IT_HOZYAEVA_TALK,
-                icon: ICONS.megaphone,
-                title: 'Доклад · IT-ХОЗЯЕВА',
+                title: 'Хватит сливать токены! Базовая гигиена для экономии лимитов ИИ-агентов · IT-ХОЗЯЕВА',
                 role: 'Спикер',
                 desc: 'Выступил с докладом от сообщества IT-ХОЗЯЕВА. Запись выступления доступна на YouTube.',
                 tags: ['Сообщество', 'Выступление', 'YouTube']
             },
             {
                 ...JS_MENTORING_STREAM,
-                title: 'JS менторинг с нуля',
-                role: 'Mentor',
+                title: 'JS-менторинг — Map, Set, Big O и React · 6Seniors',
+                role: 'Ментор',
                 period: 'Июн 2024 — н.в.',
                 desc: '6Seniors — менторинг начинающих разработчиков от нуля до junior/middle, пошаговое создание fullstack-проекта с лучшими практиками и live coding.',
                 tags: ['React', 'NestJS', 'TypeScript', 'Live Coding', 'Менторинг']

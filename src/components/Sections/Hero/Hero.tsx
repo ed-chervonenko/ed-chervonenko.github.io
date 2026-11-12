@@ -127,7 +127,7 @@ function Hero() {
                         <span className="tag-sep"> | </span>
                         <span className="tag-name">TeamLead</span>
                         <span className="tag-sep"> | </span>
-                        <span className="tag-name">Mentor</span>
+                        <span className="tag-name">{t.hero.mentorRole}</span>
                         <span className="tag-bracket">{' />'}</span>
                     </motion.p>
 

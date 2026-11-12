@@ -779,10 +779,6 @@
     min-width: 0;
     font-size: 1.55em;
 }
-.os-talks .os-project-icon {
-    width: 44px;
-    height: 44px;
-}
 .os-video-preview {
     position: relative;
     display: grid;

@@ -188,7 +188,7 @@ function HomePage() {
                         <img src={portrait} alt={t.hero.name} width="160" height="160" />
                     </div>
                     <div>
-                        <span className="os-eyebrow">FULLSTACK / TEAMLEAD / MENTOR</span>
+                        <span className="os-eyebrow">FULLSTACK / TEAMLEAD / {t.hero.mentorRole}</span>
                         <h1 id="os-page-title">
                             <span>{t.hero.firstName}</span> <span className="os-name-accent">{t.hero.lastName}</span>
                         </h1>
@@ -408,11 +408,6 @@ function TalksPage() {
                                 {talk.period && <span>{talk.period}</span>}
                             </div>
                             <div className="os-project-heading">
-                                {talk.icon && (
-                                    <span className="os-project-icon" aria-hidden="true">
-                                        {talk.icon}
-                                    </span>
-                                )}
                                 <h2>{talk.title}</h2>
                                 <Arrow diagonal />
                             </div>
@@ -447,7 +442,7 @@ function MentoringPage() {
                     <p className="os-disclaimer">{m.disclaimer}</p>
                 </div>
                 <aside className="os-price-panel">
-                    <span className="os-eyebrow">MENTORING / 1:1</span>
+                    <span className="os-eyebrow">{m.label} / 1:1</span>
                     <h2>{m.priceTitle}</h2>
                     <dl className="os-prices">
                         {m.prices.map((price) => (
@@ -593,7 +588,7 @@ function Desktop() {
                             <div className="os-window-path">
                                 <span>eduard</span>
                                 <span>/</span>
-                                <span>{SECTION_FILES[active]}</span>
+                                <span>{ru && active === 'mentoring' ? t.nav.mentoring.toLowerCase() : SECTION_FILES[active]}</span>
                             </div>
                             <span className="os-titlebar-label">{sectionLabel(active)}</span>
                         </div>
