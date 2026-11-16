@@ -68,9 +68,9 @@ const ProfileCardContent = ({ t }: { t: Translations }) => (
                 <span className="profile-link-key">{ICONS.channel} TG Channel</span>
                 <span className="profile-link-val">@edcore_blog</span>
             </a>
-            <a href="https://www.twitch.tv/edcore_ra1n" target="_blank" rel="noopener noreferrer" className="profile-link">
+            <a href="https://www.twitch.tv/EdCore_Ra1n" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.twitch} Twitch</span>
-                <span className="profile-link-val">edcore_ra1n</span>
+                <span className="profile-link-val">EdCore_Ra1n</span>
             </a>
             <a href="https://github.com/ed-chervonenko" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.github} GitHub</span>

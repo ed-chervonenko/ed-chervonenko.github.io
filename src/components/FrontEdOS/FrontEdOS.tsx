@@ -473,7 +473,7 @@ function ContactPage() {
     const { t } = useLang();
     const contacts = [
         ...t.contact.items,
-        { icon: null, label: 'Twitch', value: 'edcore_ra1n', href: 'https://www.twitch.tv/edcore_ra1n' },
+        { icon: null, label: 'Twitch', value: 'EdCore_Ra1n', href: 'https://www.twitch.tv/EdCore_Ra1n' },
         { icon: null, label: 'Instagram', value: '@ed.chervonenko', href: 'https://www.instagram.com/ed.chervonenko/' },
         { icon: null, label: 'CV / Resume', value: 'Google Drive', href: RESUME_URL }
     ];
