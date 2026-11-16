@@ -517,7 +517,7 @@ function ContactPage() {
             <p className="os-contact-description">{t.contact.desc}</p>
             <div className="os-contacts">
                 {contacts.map((contact) => (
-                    <ExternalLink href={contact.href} className="os-contact-link" key={contact.label}>
+                    <ExternalLink href={contact.href} className={`os-contact-link${contact.href === RESUME_URL ? ' os-contact-link--resume' : ''}`} key={contact.label}>
                         <ContactIcon href={contact.href} />
                         <div>
                             <span>{contact.label}</span>

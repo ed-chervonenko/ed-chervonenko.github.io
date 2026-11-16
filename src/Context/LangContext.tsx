@@ -296,7 +296,7 @@ const translations: Record<Lang, Translations> = {
             groups: [
                 { icon: ICONS.zap, title: 'Languages', tags: ['JavaScript', 'TypeScript', 'Python', 'PHP', 'Go'] },
                 { icon: ICONS.palette, title: 'Frontend', tags: ['React', 'Next.js', 'Vue.js', 'Redux / RTK', 'Zustand', 'SCSS', 'Ant Design', 'MUI'] },
-                { icon: ICONS.server, title: 'Backend', tags: ['NestJS', 'FastAPI', 'Node.js', 'Go', 'REST API', 'GraphQL'] },
+                { icon: ICONS.server, title: 'Backend', tags: ['NestJS', 'FastAPI', 'Node.js', 'REST API', 'GraphQL'] },
                 { icon: ICONS.database, title: 'Databases', tags: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB'] },
                 { icon: ICONS.rocket, title: 'DevOps', tags: ['Docker', 'GitLab CI/CD', 'Linux', 'VPS / VDS'] },
                 { icon: ICONS.wrench, title: 'Tools', tags: ['Git', 'ESLint', 'Prettier', 'Vite', 'Webpack', 'Figma'] }
@@ -492,7 +492,7 @@ const translations: Record<Lang, Translations> = {
             groups: [
                 { icon: ICONS.zap, title: 'Языки', tags: ['JavaScript', 'TypeScript', 'Python', 'PHP', 'Go'] },
                 { icon: ICONS.palette, title: 'Фронтенд', tags: ['React', 'Next.js', 'Vue.js', 'Redux / RTK', 'Zustand', 'SCSS', 'Ant Design', 'MUI'] },
-                { icon: ICONS.server, title: 'Бэкенд', tags: ['NestJS', 'FastAPI', 'Node.js', 'Go', 'REST API', 'GraphQL'] },
+                { icon: ICONS.server, title: 'Бэкенд', tags: ['NestJS', 'FastAPI', 'Node.js', 'REST API', 'GraphQL'] },
                 { icon: ICONS.database, title: 'Базы данных', tags: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB'] },
                 { icon: ICONS.rocket, title: 'DevOps', tags: ['Docker', 'GitLab CI/CD', 'Linux', 'VPS / VDS'] },
                 { icon: ICONS.wrench, title: 'Инструменты', tags: ['Git', 'ESLint', 'Prettier', 'Vite', 'Webpack', 'Figma'] }

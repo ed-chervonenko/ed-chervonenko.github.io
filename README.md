@@ -29,7 +29,7 @@ continuous learning and adopting best practices.
 
 - **Languages:** JavaScript, TypeScript, Python, PHP, Go
 - **Frontend:** React, Next.js, Vue.js, Redux/RTK, Zustand, SCSS, Ant Design, MUI
-- **Backend:** NestJS, FastAPI, Node.js, Go, REST API, GraphQL
+- **Backend:** NestJS, FastAPI, Node.js, REST API, GraphQL
 - **Databases:** PostgreSQL, MySQL, SQLite, MongoDB
 - **DevOps:** Docker, GitLab CI/CD, Linux, VPS/VDS
 - **Tools:** Git, ESLint, Prettier, Vite, Webpack, Figma
