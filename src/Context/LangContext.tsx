@@ -277,7 +277,7 @@ const translations: Record<Lang, Translations> = {
             speakingAndMentoring: (
                 <>
                     I've given technical talks and mentored developers online. I also run a{' '}
-                    <a href="https://t.me/s/fronted_engineer" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/s/edcore_blog" target="_blank" rel="noopener noreferrer">
                         Telegram channel
                     </a>
                     .
@@ -424,8 +424,8 @@ const translations: Record<Lang, Translations> = {
             desc: 'Open to new opportunities, freelance projects, and interesting collaborations.',
             items: [
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
-                { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
-                { icon: ICONS.megaphone, label: 'Telegram Channel', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
+                { icon: ICONS.send, label: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
+                { icon: ICONS.megaphone, label: 'Telegram Channel', value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
                 { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
             ]
         },
@@ -473,7 +473,7 @@ const translations: Record<Lang, Translations> = {
             speakingAndMentoring: (
                 <>
                     Выступал с техническими докладами и менторил разработчиков онлайн. Также веду свой{' '}
-                    <a href="https://t.me/s/fronted_engineer" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/s/edcore_blog" target="_blank" rel="noopener noreferrer">
                         Telegram-канал
                     </a>
                     .
@@ -620,8 +620,8 @@ const translations: Record<Lang, Translations> = {
             desc: 'Открыт к новым возможностям, фрилансу и интересным коллаборациям.',
             items: [
                 { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
-                { icon: ICONS.send, label: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
-                { icon: ICONS.megaphone, label: 'Telegram-канал', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
+                { icon: ICONS.send, label: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
+                { icon: ICONS.megaphone, label: 'Telegram-канал', value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
                 { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
             ]
         },

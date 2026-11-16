@@ -60,17 +60,17 @@ const ProfileCardContent = ({ t }: { t: Translations }) => (
         <div className="profile-divider" />
 
         <div className="profile-links">
-            <a href="https://t.me/ra1n_xd" target="_blank" rel="noopener noreferrer" className="profile-link">
+            <a href="https://t.me/ed_chervonenko" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.telegram} Telegram</span>
-                <span className="profile-link-val">@ra1n_xd</span>
+                <span className="profile-link-val">@ed_chervonenko</span>
             </a>
-            <a href="https://t.me/fronted_engineer" target="_blank" rel="noopener noreferrer" className="profile-link">
+            <a href="https://t.me/edcore_blog" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.channel} TG Channel</span>
-                <span className="profile-link-val">@fronted_engineer</span>
+                <span className="profile-link-val">@edcore_blog</span>
             </a>
-            <a href="https://www.twitch.tv/fronted_ra1n" target="_blank" rel="noopener noreferrer" className="profile-link">
+            <a href="https://www.twitch.tv/edcore_ra1n" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.twitch} Twitch</span>
-                <span className="profile-link-val">fronted_ra1n</span>
+                <span className="profile-link-val">edcore_ra1n</span>
             </a>
             <a href="https://github.com/ed-chervonenko" target="_blank" rel="noopener noreferrer" className="profile-link">
                 <span className="profile-link-key">{ICONS.github} GitHub</span>

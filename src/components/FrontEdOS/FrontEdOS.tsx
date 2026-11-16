@@ -171,8 +171,8 @@ function HomePage() {
     const { t, lang } = useLang();
     const ru = lang === 'ru';
     const quickLinks = [
-        { title: 'Telegram', value: '@ra1n_xd', href: 'https://t.me/ra1n_xd' },
-        { title: ru ? 'Telegram-канал' : 'Telegram Channel', value: '@fronted_engineer', href: 'https://t.me/fronted_engineer' },
+        { title: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
+        { title: ru ? 'Telegram-канал' : 'Telegram Channel', value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
         { title: 'GitHub', value: 'ed-chervonenko', href: 'https://github.com/ed-chervonenko' },
         { title: 'CV / Resume', value: 'Google Drive', href: RESUME_URL }
     ];
@@ -452,7 +452,7 @@ function MentoringPage() {
                             </div>
                         ))}
                     </dl>
-                    <ExternalLink href="https://t.me/ra1n_xd" className="os-button os-button--primary">
+                    <ExternalLink href="https://t.me/ed_chervonenko" className="os-button os-button--primary">
                         {m.cta}
                         <Arrow diagonal />
                     </ExternalLink>
@@ -466,7 +466,7 @@ function ContactPage() {
     const { t } = useLang();
     const contacts = [
         ...t.contact.items,
-        { icon: null, label: 'Twitch', value: 'fronted_ra1n', href: 'https://www.twitch.tv/fronted_ra1n' },
+        { icon: null, label: 'Twitch', value: 'edcore_ra1n', href: 'https://www.twitch.tv/edcore_ra1n' },
         { icon: null, label: 'CV / Resume', value: 'Google Drive', href: RESUME_URL }
     ];
     return (

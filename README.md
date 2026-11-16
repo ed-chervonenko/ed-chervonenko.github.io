@@ -36,6 +36,6 @@ continuous learning and adopting best practices.
 
 ## 📬 Contact
 
-- 💬 Telegram: [@ra1n_xd](https://t.me/Ra1n_XD)
+- 💬 Telegram: [@ed_chervonenko](https://t.me/ed_chervonenko)
 - 📧 Email: ed.chervonenko@gmail.com
 - 🐙 GitHub: [ed-chervonenko](https://github.com/ed-chervonenko)
