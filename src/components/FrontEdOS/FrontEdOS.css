@@ -358,6 +358,21 @@
 .os-home-main > .os-tags {
     margin-top: 20px;
 }
+.os-tags--logos > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+.os-tech-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    background: #fff;
+    object-fit: contain;
+}
 .os-actions {
     display: flex;
     flex-wrap: wrap;
@@ -575,10 +590,26 @@
     gap: 20px;
 }
 .os-skill {
+    --skill-color: #d5ad36;
     padding: clamp(20px, 2vw, 40px);
     border: 1px solid var(--os-line);
     border-radius: 12px;
     background: var(--os-surface-raised);
+}
+.os-skill:nth-child(2) {
+    --skill-color: var(--os-folder-blue);
+}
+.os-skill:nth-child(3) {
+    --skill-color: #e96285;
+}
+.os-skill:nth-child(4) {
+    --skill-color: var(--os-purple);
+}
+.os-skill:nth-child(5) {
+    --skill-color: #f28a4b;
+}
+.os-skill:nth-child(6) {
+    --skill-color: var(--os-green);
 }
 .os-skill-heading {
     display: flex;
@@ -587,6 +618,14 @@
     margin-bottom: 18px;
 }
 .os-skill-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid color-mix(in srgb, var(--skill-color) 30%, var(--os-line));
+    border-radius: 10px;
+    color: var(--skill-color);
+    background: color-mix(in srgb, var(--skill-color) 12%, var(--os-surface-raised));
     font-size: 24px;
 }
 .os-skill h2 {
@@ -902,26 +941,46 @@
     background: var(--os-soft-accent);
 }
 .os-contact-icon {
+    --contact-color: #ea4335;
     display: grid;
     place-items: center;
     width: 42px;
     height: 42px;
     flex-shrink: 0;
-    border: 1px solid var(--os-line);
+    border: 1px solid color-mix(in srgb, var(--contact-color) 30%, var(--os-line));
     border-radius: 10px;
-    color: var(--os-accent);
-    background: var(--os-soft-accent);
+    color: var(--contact-color);
+    background: color-mix(in srgb, var(--contact-color) 12%, var(--os-surface-raised));
+}
+.os-contact-icon[data-contact-kind='telegram'] {
+    --contact-color: #26a5e4;
+}
+.os-contact-icon[data-contact-kind='github'] {
+    --contact-color: var(--os-ink);
+}
+.os-contact-icon[data-contact-kind='twitch'] {
+    --contact-color: #a970ff;
+}
+[data-theme='light'] .os-contact-icon[data-contact-kind='twitch'] {
+    --contact-color: #9146ff;
+}
+.os-contact-icon[data-contact-kind='instagram'] {
+    --contact-color: #e4405f;
+}
+.os-contact-icon[data-contact-kind='resume'] {
+    --contact-color: #34a853;
 }
 .os-quick-links .os-contact-icon {
     display: grid;
     width: 30px;
     height: 30px;
     border-radius: 8px;
-    color: var(--os-accent);
+    color: var(--contact-color);
 }
 .os-quick-links .os-contact-icon svg {
     width: 16px;
     height: 16px;
+    color: inherit;
 }
 .os-contact-link > div {
     flex: 1;

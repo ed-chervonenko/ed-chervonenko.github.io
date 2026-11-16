@@ -4,6 +4,7 @@ import { useLang, type Translations } from '@/Context/LangContext';
 import { useTheme } from '@/Context/ThemeContext';
 import { PARTYSIDE } from '@/constants/projects';
 import ParticleCanvas from '@/components/Background/ParticleCanvas';
+import TechnologyIcon from '@/components/TechnologyIcon/TechnologyIcon';
 import portrait from '@/assets/me.jpg';
 import './FrontEdOS.css';
 
@@ -93,7 +94,18 @@ function ExternalLink({ href, children, className = '' }: { href: string; childr
 }
 
 function ContactIcon({ href }: { href: string }) {
-    const kind = href.startsWith('mailto:') ? 'email' : href.includes('t.me/') ? 'telegram' : href.includes('github.com/') ? 'github' : href.includes('twitch.tv/') ? 'twitch' : href.includes('instagram.com/') ? 'instagram' : 'resume';
+    const gradientId = useId();
+    const kind = href.startsWith('mailto:')
+        ? 'email'
+        : href.includes('t.me/')
+          ? 'telegram'
+          : href.includes('github.com/')
+            ? 'github'
+            : href.includes('twitch.tv/')
+              ? 'twitch'
+              : href.includes('instagram.com/')
+                ? 'instagram'
+                : 'resume';
     const paths: Record<string, ReactNode> = {
         telegram: (
             <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
@@ -108,45 +120,67 @@ function ContactIcon({ href }: { href: string }) {
             <>
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill={`url(#${gradientId})`} stroke="none" />
             </>
         ),
         email: (
             <>
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m2 7 10 7L22 7" />
+                <path fill="#4285f4" d="M17.455 192h40.727V93.09L0 49.455v125.09C0 184.205 7.812 192 17.455 192Z" />
+                <path fill="#34a853" d="M197.818 192h40.727C248.188 192 256 184.205 256 174.545V49.455l-58.182 43.636Z" />
+                <path fill="#fbbc04" d="M197.818 17.455V93.09L256 49.455V26.182c0-21.574-24.63-33.892-41.891-20.946Z" />
+                <path fill="#ea4335" d="M58.182 93.09V17.455L128 69.818l69.818-52.363V93.09L128 145.455Z" />
+                <path fill="#c5221f" d="M0 26.182v23.273L58.182 93.09V17.455L41.891 5.236C24.611-7.71 0 4.608 0 26.182Z" />
             </>
         ),
         resume: (
             <>
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 0v6h6M8 13h8M8 17h8" />
+                <path fill="#0066da" d="M0 16h8l-4 7Z" />
+                <path fill="#00ac47" d="m8 2 4 7-4 7H0Z" />
+                <path fill="#00832d" d="M8 2h8l-4 7Z" />
+                <path fill="#2684fc" d="M8 16h8l4 7H4Z" />
+                <path fill="#ea4335" d="M16 16h8l-4 7Z" />
+                <path fill="#ffba00" d="m16 2 8 14h-8l-4-7Z" />
             </>
         )
     };
-    const outline = kind === 'email' || kind === 'resume' || kind === 'instagram';
+    const outline = kind === 'instagram';
     return (
         <span className="os-contact-icon" data-contact-kind={kind} aria-hidden="true">
             <svg
                 width="22"
                 height="22"
-                viewBox="0 0 24 24"
+                viewBox={kind === 'email' ? '0 0 256 193' : '0 0 24 24'}
                 fill={outline ? 'none' : 'currentColor'}
-                stroke={outline ? 'currentColor' : undefined}
+                stroke={outline ? `url(#${gradientId})` : undefined}
                 strokeWidth={outline ? 1.8 : undefined}
                 strokeLinecap="round"
                 strokeLinejoin="round"
             >
+                {kind === 'instagram' && (
+                    <defs>
+                        <linearGradient id={gradientId} x1="0" y1="1" x2="1" y2="0">
+                            <stop stopColor="#feda75" />
+                            <stop offset="0.25" stopColor="#fa7e1e" />
+                            <stop offset="0.5" stopColor="#d62976" />
+                            <stop offset="0.75" stopColor="#962fbf" />
+                            <stop offset="1" stopColor="#4f5bd5" />
+                        </linearGradient>
+                    </defs>
+                )}
                 {paths[kind]}
             </svg>
         </span>
     );
 }
 
-function Tags({ items }: { items: string[] }) {
+function Tags({ items, withLogos = false }: { items: string[]; withLogos?: boolean }) {
     return (
-        <div className="os-tags">
+        <div className={`os-tags${withLogos ? ' os-tags--logos' : ''}`}>
             {items.map((tag) => (
-                <span key={tag}>{tag}</span>
+                <span key={tag}>
+                    {withLogos && <TechnologyIcon name={tag} />}
+                    {tag}
+                </span>
             ))}
         </div>
     );
@@ -285,7 +319,7 @@ function SkillsPage() {
                             <span className="os-eyebrow">0{index + 1}</span>
                         </div>
                         <h2>{group.title}</h2>
-                        <Tags items={group.tags} />
+                        <Tags items={group.tags} withLogos />
                     </article>
                 ))}
             </div>
