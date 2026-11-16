@@ -17,6 +17,7 @@ import nodejs from '@/assets/tech/nodejs.svg';
 import graphql from '@/assets/tech/graphql.svg';
 import postgresql from '@/assets/tech/postgresql.svg';
 import mysql from '@/assets/tech/mysql.svg';
+import sqlite from '@/assets/tech/sqlite.svg';
 import mongodb from '@/assets/tech/mongodb.svg';
 import docker from '@/assets/tech/docker.svg';
 import gitlab from '@/assets/tech/gitlab.svg';
@@ -48,6 +49,7 @@ const LOGOS: Record<string, string> = {
     GraphQL: graphql,
     PostgreSQL: postgresql,
     MySQL: mysql,
+    SQLite: sqlite,
     MongoDB: mongodb,
     Docker: docker,
     'GitLab CI/CD': gitlab,
