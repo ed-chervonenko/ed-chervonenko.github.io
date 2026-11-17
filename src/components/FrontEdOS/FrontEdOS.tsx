@@ -256,7 +256,7 @@ function HomePage() {
                     <img className="os-game-icon" src={PARTYSIDE.icon} alt="" width="44" height="44" />
                     <div>
                         <strong>{PARTYSIDE.title}</strong>
-                        <span>React · Socket.IO · Three.js</span>
+                        <span>{PARTYSIDE.description[lang]}</span>
                     </div>
                     <Arrow diagonal />
                 </ExternalLink>

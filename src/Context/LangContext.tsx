@@ -365,7 +365,7 @@ const translations: Record<Lang, Translations> = {
                     title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Feb 2026 — Present',
-                    desc: 'An online platform for playing games with friends: join a room, chat and spend time together right in your browser.',
+                    desc: PARTYSIDE.description.en,
                     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
                     link: PARTYSIDE.url
                 },
@@ -556,7 +556,7 @@ const translations: Record<Lang, Translations> = {
                     title: PARTYSIDE.title,
                     role: 'Fullstack Developer',
                     period: 'Фев 2026 — н.в.',
-                    desc: 'Онлайн-платформа с играми для друзей: собирайтесь в одной комнате, общайтесь и проводите время вместе прямо в браузере.',
+                    desc: PARTYSIDE.description.ru,
                     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Three.js'],
                     link: PARTYSIDE.url
                 },
