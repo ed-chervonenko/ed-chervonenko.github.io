@@ -230,6 +230,15 @@ const IT_HOZYAEVA_TALK = { href: 'https://youtu.be/XQ9E-r7i0oE', videoId: 'XQ9E-
 const JS_MENTORING_STREAM = { href: 'https://www.youtube.com/live/W2y0QlShyd0', videoId: 'W2y0QlShyd0' };
 const SIX_SENIORS_CHANNEL = 'https://www.youtube.com/@6seniors';
 
+const getContactItems = (telegramChannelLabel: string): ContactItem[] => [
+    { icon: ICONS.send, label: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
+    { icon: ICONS.megaphone, label: telegramChannelLabel, value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
+    { icon: null, label: 'Twitch', value: 'EdCore_Ra1n', href: 'https://www.twitch.tv/EdCore_Ra1n' },
+    { icon: null, label: 'Instagram', value: '@ed_chervonenko', href: 'https://www.instagram.com/ed_chervonenko/' },
+    { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' },
+    { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' }
+];
+
 const translations: Record<Lang, Translations> = {
     en: {
         nav: {
@@ -422,12 +431,7 @@ const translations: Record<Lang, Translations> = {
             label: 'Contact',
             title: "Let's work together",
             desc: 'Open to new opportunities, freelance projects, and interesting collaborations.',
-            items: [
-                { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
-                { icon: ICONS.send, label: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
-                { icon: ICONS.megaphone, label: 'Telegram Channel', value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
-                { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
-            ]
+            items: getContactItems('Telegram Channel')
         },
         footer: {
             copy: 'Eduard Chervonenko'
@@ -618,12 +622,7 @@ const translations: Record<Lang, Translations> = {
             label: 'Контакты',
             title: 'Давайте работать вместе',
             desc: 'Открыт к новым возможностям, фрилансу и интересным коллаборациям.',
-            items: [
-                { icon: ICONS.mail, label: 'Email', value: 'ed.chervonenko@gmail.com', href: 'mailto:ed.chervonenko@gmail.com' },
-                { icon: ICONS.send, label: 'Telegram', value: '@ed_chervonenko', href: 'https://t.me/ed_chervonenko' },
-                { icon: ICONS.megaphone, label: 'Telegram-канал', value: '@edcore_blog', href: 'https://t.me/edcore_blog' },
-                { icon: ICONS.gitBranch, label: 'GitHub', value: 'github.com/ed-chervonenko', href: 'https://github.com/ed-chervonenko' }
-            ]
+            items: getContactItems('Telegram-канал')
         },
         footer: {
             copy: 'Эдуард Червоненко'
