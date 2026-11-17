@@ -508,7 +508,7 @@ function ContactPage() {
     const contacts = [
         ...t.contact.items,
         { icon: null, label: 'Twitch', value: 'EdCore_Ra1n', href: 'https://www.twitch.tv/EdCore_Ra1n' },
-        { icon: null, label: 'Instagram', value: '@ed.chervonenko', href: 'https://www.instagram.com/ed.chervonenko/' },
+        { icon: null, label: 'Instagram', value: '@ed_chervonenko', href: 'https://www.instagram.com/ed_chervonenko/' },
         { icon: null, label: 'CV / Resume', value: 'Google Drive', href: RESUME_URL }
     ];
     return (

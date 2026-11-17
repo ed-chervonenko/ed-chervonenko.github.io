@@ -39,4 +39,4 @@ continuous learning and adopting best practices.
 - 💬 Telegram: [@ed_chervonenko](https://t.me/ed_chervonenko)
 - 📧 Email: ed.chervonenko@gmail.com
 - 🐙 GitHub: [ed-chervonenko](https://github.com/ed-chervonenko)
-- 📷 Instagram: [@ed.chervonenko](https://www.instagram.com/ed.chervonenko/)
+- 📷 Instagram: [@ed_chervonenko](https://www.instagram.com/ed_chervonenko/)
